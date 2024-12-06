@@ -1,0 +1,73 @@
+html {
+  max-width: 100%;
+
+}
+
+#header {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 10px 20px; 
+    background-color: #f5f5f5; 
+  }
+  
+  #header img {
+    height: 100px; 
+  }
+  
+  .mainSector {
+    display: flex; 
+    justify-content: center; 
+    gap: 40px; 
+    flex-grow: 1; /* 남은 공간을 차지해서 가운데 위치 */
+  }
+  
+  #header img + .mainSector {
+    margin-left: auto; 
+  }
+  
+form{
+  margin-top: 30px;
+}
+
+  .mainSector a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px; 
+    padding: 5px 10px; 
+    border-radius: 5px; 
+  }
+
+  .form-border{
+    border: solid 2px lightgray;
+    border-radius: 10px;
+    width: 1004px;
+    height: 50px;
+
+    
+  }
+
+span {
+  display: inline-block;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+input{
+  border: none;
+}
+
+input:focus{
+ outline: none;
+}
+
+.row-hr{
+  display: inline-block;
+  border-left: thin solid red;
+  height: 10px;
+  margin-left: 10px;
+}
+
+.banner {
+  background-color: yellow;
+}
