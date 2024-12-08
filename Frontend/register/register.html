@@ -1,67 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HTML 기본 문서</title>
-    <link rel="stylesheet" href="register.css" />
+    <title>회원가입 | 도토리마켓</title>
+    <link rel="stylesheet" href="../register/register.css"/>
   </head>
   <body>
-    <div class="dd">
-      <div class="form-wrap">
-        <div><h1>회원가입</h1></div>
-
-        <div class="form">
-          <form>
-            <input
-              type="email"
-              placeholder="이메일을 입력해주세요."
-              required
-            /><button>중복 확인</button>
-          </form>
-        </div>
-        <div class="form">
-          <form>
-            <input
-              type="password"
-              placeholder="메일로 받은 인증번호를 입력해주세요."
-              required
-            /><button>인증번호 요청</button>
-          </form>
-        </div>
-        <div class="form2">
-          <form>
-            <input type="text" placeholder="이름을 입력해주세요." required />
-          </form>
-        </div>
-        <div class="form2">
-          <form>
-            <input
-              type="text"
-              placeholder="휴대폰 번호를 입력해주세요"
-              required
-            />
-          </form>
-        </div>
-        <div>
-          <button
-            class="button own"
-            onclick="location.href='../main/main.html'"
-            type="submit"
-          >
-            회원가입 완료
-          </button>
-        </div>
-        <div>
-          <button class="button own" onclick="location.href='../main/main.html'">
-            메인
-          </button>
-        </div>
-      </div>
+    <div class="formbox">
+        <h1>본인 정보를 입력해주세요</h1>
+        <form class="form" action="./authentication.html">
+            <div class="inputbox">
+                <label for="umail"></label>
+                <input type="email" id="umail" autofocus placeholder="이메일" required>
+            </div>
+            <div class="inputbox">
+                <label for="name"></label>
+                <input type="text" id="name" placeholder="닉네임(3~16자)" required>
+            </div>
+            <div class="inputbox">
+                <label for="telnum"></label>
+                <input type="tel" id="telnum" placeholder="전화번호" required>
+            </div>
+                <button type="submit" class="button">다음</button>
+        </form>
     </div>
-
-    <br />
-    <hr />
+    <hr>
     <footer>
       <p>
         도움이 필요하면 <a href="#">이메일</a> 또는 고객센터 1670-2910로 문의
