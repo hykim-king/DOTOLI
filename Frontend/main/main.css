@@ -12,6 +12,11 @@ html {
     width: 100%;
   }
 
+.logo {
+  margin-top: 60px;
+  margin-left: -20px;
+}
+
 #header h3 {
   font-size: 25px;
 }
@@ -24,7 +29,7 @@ a {
   #header img {
     height: 100px; 
     margin-bottom: -30px;
-    margin-left: 120px;
+    margin-left: 180px;
   }
   
   .mainSector {
@@ -49,8 +54,7 @@ form{
     padding: 5px 0px;
     border-radius: 5px;
     margin-bottom: -30px;
-    margin-left: 100px
-    
+    margin-left: -60px;    
      
   }
 
@@ -125,6 +129,7 @@ form{
   gap: 10px;
   margin-left: 130px;
   color: #212124;
+  margin-bottom: 30px;
   font-weight: bolder;
   
 }
