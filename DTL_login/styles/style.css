@@ -7,24 +7,41 @@
     border-radius: 15px;
     box-shadow: 0 2px 0 #eee;
 }
-.logo {text-align: center;}
-h1 a img {width: 320px;}
-.wrap {position: relative; width: 500px; margin: 0 auto;}
-main #loginfrm {border-bottom: 1px solid #ccc; margin-bottom: 20px; padding-bottom: 20px;}
+.logo {
+    text-align: center;
+}
+a img {
+    width: 320px;
+}
+.wrap {
+    position: relative;
+    width: 500px; 
+    margin: 0 auto;
+}
+main #loginfrm {
+    border-bottom: 1px solid #ccc; 
+    margin-bottom: 20px; 
+    padding-bottom: 20px;
+}
 main #loginfrm fieldset ul li {
-    border: 1px solid #ccc; background:#fff;
-    display: flex; flex-flow: row nowrap;
+    border: 1px solid #ccc; 
+    background:#fff;
+    display: flex; 
+    flex-flow: row nowrap;
     margin-bottom: 10px;
     position: relative;
 }
 main #loginfrm fieldset ul .error {
-    color: rgb(255, 114, 114); padding: 10px; display: none;
+    color: rgb(255, 114, 114); 
+    padding: 10px; 
+    display: none;
 }
 main #loginfrm fieldset ul .id_error {border: 0;}
-main #loginfrm fieldset ul .pw_error {border: 0;}
+.error pw_error {border: 0;}
 .id_bg {
     border-right: 1px solid #ccc;
-    padding: 20px; width: 10px;
+    padding: 20px; 
+    width: 10px;
     background-color: #fdfdfd;
     position: relative;
 }
@@ -32,12 +49,16 @@ main #loginfrm fieldset ul .pw_error {border: 0;}
     content: ''; display: block;
     background-image: url(../images/icon.svg);
     background-position: 0 0;
-    width: 21px; height: 21px;
-    position: absolute; left: 14px; top: 11px;
+    width: 21px; 
+    height: 21px;
+    position: absolute; 
+    left: 14px; 
+    top: 11px;
 }
 .pw_bg {
     border-right: 1px solid #ccc;
-    padding: 20px; width: 10px;
+    padding: 20px; 
+    width: 10px;
     background-color: #fdfdfd;
     position: relative;
 }
