@@ -2,6 +2,7 @@ html {
   margin-left: -5px;
   max-height: 100%;
   margin-top: -70px;
+  max-width: 100%;
 }
 
 #header {
@@ -9,6 +10,7 @@ html {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  max-width: 100%;
 }
 
 .container {
@@ -29,12 +31,9 @@ html {
 }
 
 .logo {
+  max-width: 100%;
   margin-top: 60px;
   margin-left: -20px;
-}
-
-#header h3 {
-  font-size: 15px;
 }
 
 a {
@@ -44,13 +43,15 @@ a {
 
 .headerImg {
   height: 250px;
-  width: 250px;
+  width: 100%;
+  max-width: 250px;
   margin-bottom: -35px;
   margin-left: 180px;
   margin-right: -50px;
 }
 
 .mainSector {
+  max-width: 100%;
   display: flex;
   justify-content: center;
   gap: 40px;
@@ -58,10 +59,12 @@ a {
 }
 
 .headerImg + .mainSector {
+  max-width: 100%;
   margin-left: auto;
 }
 
 form {
+  max-width: 100%;
   margin-top: 30px;
 }
 
@@ -75,6 +78,7 @@ form {
   border-radius: 20px;
   border-style: none;
   background-color: transparent;
+  max-width: 100%;
 }
 
 .headerBtn:hover {
@@ -92,6 +96,7 @@ form {
 }
 
 .dropdown {
+  max-width: 100%;
   display: flex; /* Flexbox를 사용해 수평 정렬 */
   align-items: center; /* 세로 중앙 정렬 */
   border: solid 2px lightgray;
@@ -102,18 +107,23 @@ form {
   box-sizing: border-box;
   gap: 10px; /* 요소 간 여백 설정 */
   margin-top: 55px;
+  overflow: hidden;
 }
 
 #dropdownBtn {
+  max-width: 100%;
   border: none;
   background-color: white;
   font-size: 16px;
   cursor: pointer;
   padding-bottom: 4px;
+  overflow: hidden;
 }
 
 .dropdownBtnImg {
+  max-width: 100%;
   padding-bottom: 7px;
+  overflow: hidden;
 }
 
 input {
@@ -122,6 +132,8 @@ input {
   outline: none;
   font-size: 16px;
   margin-top: 4px;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .search-img {
@@ -263,4 +275,134 @@ footer {
   display: flex;
   flex-direction: column;
   color: #96a6b3;
+}
+
+/* 화면 너비가 1024px 이하일 때 */
+@media screen and (max-width: 1024px) {
+  #header {
+    flex-direction: column; /* 헤더를 세로로 배치 */
+    align-items: center;
+    gap: 10px;
+  }
+
+  .mainSector {
+    flex-direction: column; /* 검색창 세로 정렬 */
+    width: 100%; /* 전체 너비 사용 */
+    align-items: center;
+    gap: 10px;
+  }
+
+  .dropdown {
+    width: 90%; /* 검색창 너비 조정 */
+    height: 50px; /* 높이 줄이기 */
+  }
+
+  .headerImg {
+    width: 180px; /* 로고 크기 줄이기 */
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .headerBtn {
+    width: 100px; /* 버튼 너비 고정 */
+    font-size: 14px; /* 글자 크기 줄이기 */
+    margin: 5px; /* 여백 줄이기 */
+  }
+
+  .mypage {
+    margin-right: 0; /* 마이페이지 여백 조정 */
+  }
+}
+
+/* 화면 너비가 768px 이하일 때 */
+@media screen and (max-width: 768px) {
+  #header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container {
+    height: auto; /* 배너 높이 자동 조정 */
+  }
+
+  .headerImg {
+    width: 150px; /* 로고 이미지 더 작게 */
+  }
+
+  .dropdown {
+    width: 100%;
+    max-width: 400px; /* 검색창 최대 너비 제한 */
+  }
+
+  .dropdownBtnImg {
+    max-width: 70%;
+    padding-bottom: 7px;
+    overflow: hidden;
+  }
+
+  input {
+    font-size: 14px; /* 입력창 글자 크기 조정 */
+  }
+
+  .headerBtn {
+    font-size: 12px; /* 버튼 글자 크기 조정 */
+    margin: 5px 0; /* 버튼 간격 조정 */
+  }
+
+  .banner img {
+    width: 100%; /* 배너 이미지 화면 너비에 맞춤 */
+    height: auto;
+  }
+
+  .kategoryWrap {
+    flex-wrap: wrap; /* 카테고리 여러 줄로 배치 */
+    gap: 10px;
+  }
+
+  .kategory {
+    width: 80px; /* 이미지 크기 축소 */
+    height: 80px;
+  }
+
+  .kategoryH a {
+    font-size: 12px; /* 카테고리 텍스트 축소 */
+  }
+
+  .carousel_button_container {
+    display: none; /* 작은 화면에서 캐러셀 버튼 숨김 */
+  }
+}
+
+/* 화면 너비가 480px 이하일 때 */
+@media screen and (max-width: 480px) {
+  .headerImg {
+    width: 100px; /* 로고 이미지 더 작게 */
+  }
+
+  .dropdown {
+    width: 90%;
+    height: 40px; /* 검색창 높이 줄이기 */
+  }
+
+  #dropdownBtn {
+    font-size: 12px; /* 드롭다운 버튼 글자 축소 */
+  }
+
+  input {
+    font-size: 12px;
+  }
+
+  .headerBtn {
+    width: 80px;
+    font-size: 12px; /* 버튼 더 작게 */
+  }
+
+  .kategoryWrap {
+    gap: 5px; /* 카테고리 간격 줄이기 */
+  }
+
+  .kategory {
+    width: 60px;
+    height: 60px;
+  }
 }
