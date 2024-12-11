@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>당신 근처의 도토리</title>
     <link rel="stylesheet" href="./main.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
   </head>
   <body>
-    
     <header>
       <div class="container">
         <img src="../imges/headerBanner.png" class="headerBanner" />
@@ -21,11 +24,15 @@
           <form>
             <div class="dropdown">
               <button id="dropdownBtn">중고거래</button>
-              <img src="../imges/dropdown_button.png" class="dropdownBtnImg" />
+              <span class="material-symbols-outlined dropdownBtnImg">
+                arrow_drop_down
+              </span>
+              <!-- 중고거래 드롭다운 버튼 옆에 있는 막대기 -->
               <div class="row-hr"></div>
               <input type="text" placeholder="검색어를 입력해주세요" />
-              <img src="../imges/search.png" class="search-img" />
+              <span class="material-symbols-outlined search-img"> search </span>
             </div>
+            <!-- 인기 검색어 -->
             <p class="keyword">
               인기 검색어
               <a href="#">아이폰</a>
@@ -44,15 +51,18 @@
           <!-- 검색창 끝 -->
         </div>
         <!-- 검색창 + 키워드 코드 입력란 끝 -->
+
         <a href="../login/login.html" class="headerBtn">로그인</a>
         <a href="../register/signup.html" class="headerBtn">회원가입</a>
         <a href="#" class="headerBtn mypage">마이페이지</a>
       </div>
     </header>
 
+    <!-- 당근 배너 임의로 가져온 상태 (추후 변경) -->
     <div class="banner"><img src="../imges/banner.png" /></div>
     <div>
       <h2>카테고리</h2>
+      <!-- 슬라이드 코드 시작 -->
       <div class="carousel_container">
         <div class="carousel_wrapper">
           <!-- 첫 번째 슬라이드 -->
@@ -80,15 +90,27 @@
           <!-- 두 번째 슬라이드 이미지 추가후 경로 수정 -->
           <div class="carousel_item">
             <div class="kategoryWrap">
-              <img src="../imges//childBook.png" alt="유아도서" class="kategory" />
+              <img
+                src="../imges//childBook.png"
+                alt="유아도서"
+                class="kategory"
+              />
               <img
                 src="../imges/fclothes.png"
                 alt="여성의류"
                 class="kategory"
               />
               <img src="../imges/bag.png" alt="여성잡화" class="kategory" />
-              <img src="../imges/mclothes.png" alt="남성패션/잡화" class="kategory" />
-              <img src="../imges/fashion.png" alt="뷰티/미용" class="kategory" />
+              <img
+                src="../imges/mclothes.png"
+                alt="남성패션/잡화"
+                class="kategory"
+              />
+              <img
+                src="../imges/fashion.png"
+                alt="뷰티/미용"
+                class="kategory"
+              />
             </div>
             <div class="kategoryWrap kategoryH">
               <a href="#"><strong>유아도서</strong></a>
@@ -99,63 +121,62 @@
             </div>
           </div>
 
-           <!-- 세 번째 슬라이드 이미지 추가후 경로 수정 -->
-      <div class="carousel_item">
-        <div class="kategoryWrap">
-          <img src="../img/ball.png" alt="스포츠/레저" class="kategory" />
-          <img
-            src="../img/game.png"
-            alt="취미/게임/음반"
-            class="kategory"
-          />
-          <img src="../img/book.png" alt="도서" class="kategory" />
-          <img src="../img/ticket.png" alt="티켓/교환권" class="kategory" />
-          <img src="../img/second_bear.png" alt="가공식품" class="kategory" />
-        </div>
-        <div class="kategoryWrap kategoryH">
-          <a href="#"><strong>스포츠/레저</strong></a>
-          <a href="#"><strong>취미/게임/음반</strong></a>
-          <a href="#"><strong>도서</strong></a>
-          <a href="#"><strong>티켓/교환권</strong></a>
-          <a href="#"><strong>가공식품</strong></a>
+          <!-- 세 번째 슬라이드 이미지 추가후 경로 수정 -->
+          <div class="carousel_item">
+            <div class="kategoryWrap">
+              <img src="../img/ball.png" alt="스포츠/레저" class="kategory" />
+              <img
+                src="../img/game.png"
+                alt="취미/게임/음반"
+                class="kategory"
+              />
+              <img src="../img/book.png" alt="도서" class="kategory" />
+              <img src="../img/ticket.png" alt="티켓/교환권" class="kategory" />
+              <img
+                src="../img/second_bear.png"
+                alt="가공식품"
+                class="kategory"
+              />
+            </div>
+            <div class="kategoryWrap kategoryH">
+              <a href="#"><strong>스포츠/레저</strong></a>
+              <a href="#"><strong>취미/게임/음반</strong></a>
+              <a href="#"><strong>도서</strong></a>
+              <a href="#"><strong>티켓/교환권</strong></a>
+              <a href="#"><strong>가공식품</strong></a>
+            </div>
+          </div>
+
+          <!-- 네 번째 슬라이드 이미지 추가후 경로 수정 -->
+          <div class="carousel_item">
+            <div class="kategoryWrap">
+              <img src="../img/chair.png" alt="노트북2" class="kategory" />
+              <img
+                src="../img/second_microwave.png"
+                alt="전자레인지2"
+                class="kategory"
+              />
+              <img src="../img/second_chair.png" alt="의자2" class="kategory" />
+              <img src="../img/second_pot.png" alt="냄비2" class="kategory" />
+            </div>
+            <div class="kategoryWrap kategoryH">
+              <a href="#"><strong>건강기능식품</strong></a>
+              <a href="#"><strong>반려동물용품</strong></a>
+              <a href="#"><strong>식물</strong></a>
+              <a href="#"><strong>기타 중고물품</strong></a>
+            </div>
+          </div>
+
+          <!--아래 div 태그가 캐러셀 끝-->
         </div>
       </div>
-
-
-       <!-- 네 번째 슬라이드 이미지 추가후 경로 수정 -->
-       <div class="carousel_item">
-        <div class="kategoryWrap">
-          <img src="../img/chair.png" alt="노트북2" class="kategory" />
-          <img
-            src="../img/second_microwave.png"
-            alt="전자레인지2"
-            class="kategory"
-          />
-          <img src="../img/second_chair.png" alt="의자2" class="kategory" />
-          <img src="../img/second_pot.png" alt="냄비2" class="kategory" />
-        </div>
-        <div class="kategoryWrap kategoryH">
-          <a href="#"><strong>건강기능식품</strong></a>
-          <a href="#"><strong>반려동물용품</strong></a>
-          <a href="#"><strong>식물</strong></a>
-          <a href="#"><strong>기타 중고물품</strong></a>
-        </div>
-      </div>
-
-      <!--아래 div 태그가 캐러셀 끝-->
-    </div>
-  </div>
-
-        </div>
-      </div>
-
-     
       <!-- 캐러셀 버튼 -->
       <div class="carousel_button_container">
         <button class="carousel_prev">&lt;</button>
         <button class="carousel_next">&gt;</button>
       </div>
-    </div>
+
+      
 
     <footer>
       <div><strong>도토리 마켓</strong></div>
@@ -175,14 +196,14 @@
       function moveToSlide(index) {
         // 인덱스 값 계산 (무한 루프 가능하게)
         if (index < 0) {
-          currentIndex = totalSlides - 1;
+          currentIndex = totalSlides - 1; // 첫 번째 슬라이드로 이동
         } else if (index >= totalSlides) {
-          currentIndex = 0;
+          currentIndex = 0; // 마지막 슬라이드 -> 첫 번째 슬라이드로 이동
         } else {
           currentIndex = index;
         }
 
-        const offset = -currentIndex * 100; // 슬라이드 이동 거리 계산
+        const offset = -currentIndex * 100; // 슬라이드 이동 거리 계산 (각 슬라이드가 100% 크기여서)
         carouselWrapper.style.transform = `translateX(${offset}%)`;
       }
 
@@ -196,13 +217,7 @@
         moveToSlide(currentIndex + 1);
       });
 
-      bullets.forEach((bullet, index) => {
-        bullet.addEventListener("click", () => {
-          showSlide(index);
-        });
-      });
-
-      showSlide(0);
+      moveToSlide(0); // 첫 번째 슬라이드로 이동
     </script>
   </body>
 </html>
