@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+    <!-- org.springframework.beans.factory.UnsatisfiedDependencyException: Error 
+        creating bean with name 'com.pcwk.ehr.user.UserServiceJupiter': Unsatisfied 
+        dependency expressed through field 'testUserService'; nested exception is 
+        org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 
+        'testUserService' is expected to be of type 'com.pcwk.ehr.user.service.TestUserService' 
+        but was actually of type 'com.sun.proxy.$Proxy37' -->
+    <tx:annotation-driven proxy-target-class="true"
+        transaction-manager="transactionManager" />
+    <!-- 트랜잭션 Advice -->
+    <tx:advice id="txAdvice"
+        transaction-manager="transactionManager">
+    </tx:advice>
+
+    <aop:config>
+        <aop:pointcut
+            expression="execution(* com.pcwk.ehr..service.*Impl.up*(..))"
+            id="txPointcut" />
+        <!--advisor: advice + pointcut -->
+        <aop:advisor advice-ref="txAdvice"
+            pointcut-ref="txPointcut" />
+    </aop:config>
+
+
+
+    <!-- -->
+<!--     <bean id="dummyMailSender"
+        class="com.pcwk.ehr.user.service.DummyMailSender"></bean> -->
+
+
+    <!-- email smtp 설정 -->
+    <bean id="mailSenderImpl"
+        class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="smtp.naver.com"></property>
+        <property name="port" value="465"></property>
+        <property name="username" value="karma9745@naver.com"></property>
+        <property name="password" value="Dldudals9745_@"></property>
+        <property name="defaultEncoding" value="utf-8"></property>
+        <!-- SSL -->
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.smtp.host">smtp.naver.com</prop>
+                <prop key="mail.smtp.port">465</prop>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.ssl.protocols">TLSv1.2</prop>
+                <prop key="mail.smtp.ssl.enable">true</prop>
+                <prop key="mail.smtp.ssl.trust">smtp.naver.com</prop>
+                <prop key="mail.debug">true</prop>
+            </props>
+        </property>
+    </bean>
+
+
+    <!-- 트랜잭션 매니저 빈 등록 -->
+    <bean id="transactionManager"
+        class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+
+    <bean id="testUserService"
+        class="com.pcwk.ehr.user.service.TestUserService">
+        <constructor-arg index="0" value="james04"></constructor-arg>
+    </bean>
+
+    <bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource">
+        <property name="driverClassName"
+            value="oracle.jdbc.driver.OracleDriver"></property>
+        <property name="jdbcUrl"
+            value="jdbc:oracle:thin:@localhost:1521:xe"></property>
+        <property name="username" value="scott"></property>
+        <property name="password" value="pcwk"></property>
+
+        <!-- Optional settings -->
+        <property name="maximumPoolSize" value="10"></property>
+        <property name="minimumIdle" value="5"></property>
+        <property name="connectionTimeout" value="30000"></property>
+        <property name="idleTimeout" value="600000"></property>
+        <property name="maxLifetime" value="1800000"></property>
+
+
+        <!-- maximumPoolSize : 풀에 유지할 최대 연결 수 minimumIdle : 유휴상태로 유지할 수 있는 최대 연결 
+            수 connectionTimeout : 연결 시도 시 타임아웃 설정(밀리 초) idleTimeout : 유휴 연결이 풀에서 제거되기 
+            maxLifetime : 연결이 풀에서 제거되기 최대 생존 시간 입니다.(밀리 초) 전 대기 시간(밀리 초) -->
+    </bean>
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+       <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+</beans>
