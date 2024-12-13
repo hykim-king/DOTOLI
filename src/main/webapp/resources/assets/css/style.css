@@ -1,0 +1,176 @@
+.container {
+  position: relative;
+  margin: 300px auto;
+  border: 1px solid #e7e7e7;
+  padding: 50px;
+  width: 500px;
+  border-radius: 15px;
+  box-shadow: 0 2px 0 #eee;
+}
+
+.logo {
+  text-align: center;
+}
+
+h1 a img {
+  width: 320px;
+}
+
+.wrap {
+  position: relative;
+  width: 500px;
+  margin: 0 auto;
+}
+
+main #loginfrm {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+main #loginfrm fieldset ul li {
+  border: 1px solid #ccc;
+  background: #fff;
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+main #loginfrm fieldset ul .error {
+  color: rgb(255, 114, 114);
+  padding: 10px;
+  display: none;
+}
+
+main #loginfrm fieldset ul .id_error,
+main #loginfrm fieldset ul .pw_error {
+  border: 0;
+}
+
+.id_bg,
+.pw_bg {
+  border-right: 1px solid #ccc;
+  padding: 20px;
+  width: 10px;
+  background-color: #fdfdfd;
+  position: relative;
+}
+
+.id_bg::after {
+  content: "";
+  display: block;
+  background-image: url(../images/icon.svg);
+  background-position: 0 0;
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  left: 14px;
+  top: 11px;
+}
+
+.pw_bg::after {
+  content: "";
+  display: block;
+  background-image: url(../images/icon.svg);
+  background-position: -21px 0;
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  left: 14px;
+  top: 11px;
+}
+
+main #loginfrm fieldset ul li span input {
+  width: 400px;
+  height: 40px;
+  border: 0;
+  padding-left: 10px;
+}
+
+main #loginfrm fieldset ul li span input::placeholder {
+  font-size: 0.95rem;
+  color: #aaa;
+}
+
+.pw_show_hide {
+  background-image: url(../images/icon.svg);
+  background-position: -105px 0;
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  right: 11px;
+  top: 8px;
+}
+
+.btm {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 15px 0;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.btm p label input[name="login_y"] {
+  appearance: none;
+}
+
+.btm p label input[name="login_y"] + span::before {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  content: "";
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  background-image: url(../images/icon.svg);
+  background-position: -65px -22px;
+  margin-right: 5px;
+}
+
+.btm p label input[name="login_y"]:checked + span::before {
+  background-position: -84px -21px;
+}
+
+.btm .idpw_search {
+  margin-left: 280px;
+  color: #4aa4ff;
+}
+
+.btm .idpw_search::after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background-image: url(../images/icon.svg);
+  background-position: -104px -21px;
+  margin-left: 5px;
+}
+
+#login_btn {
+  background: #a86202;
+  border: 1px solid #a86202;
+  width: 100%;
+  color: #fff;
+  padding: 15px 0;
+  font-size: medium;
+  box-shadow: 0 2px 0 #744402;
+  border-radius: 10px;
+}
+
+.join_link {
+  border: 1px solid #ccc;
+  color: #666666;
+  display: block;
+  text-align: center;
+  background: #fff;
+  padding: 15px 0;
+  width: 100%;
+  box-shadow: 0 2px 0 #eee;
+  border-radius: 10px;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.85rem;
+  margin-top: 20px;
+}
