@@ -5,77 +5,92 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HTML 기본 문서</title>
-  <link rel="stylesheet" href="/ehr/resources/assets/css/register.css" />
-  <script src="/ehr/resources/assets/js/jquery_3_7_1.js"></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HTML 기본 문서</title>
+<link rel="stylesheet" href="/ehr/resources/assets/css/register.css" />
+<script src="/ehr/resources/assets/js/jquery_3_7_1.js"></script>
 </head>
 
 <body>
 
-  <div>
-    <h1>회원가입</h1>
-  </div>
+	<div>
+		<h1>회원가입</h1>
+	</div>
 
-  <form id="registerForm" method="POST" action="">
+	<form id="registerForm" method="POST" action="">
 
-    <!-- 이메일 입력 및 중복 확인 -->
-    <div class="form">
-      <input type="email" id="email" name="email" placeholder="이메일" minlength="3" maxlength="320" required>
-      <span id="emailMessage"></span>
-    </div>
+		<!-- 이메일 입력 및 중복 확인 -->
+		<div class="form">
+			<label for="auth-code">이메일(아이디)</label> <input type="signinput"
+				id="email" name="email" placeholder="이메일" minlength="3"
+				maxlength="320" required> <span id="emailMessage"></span>
+		</div>
 
-    <!-- 인증 번호 요청 -->
-    <div class="form">
-      <input type="text" id="auth-code" name="auth_code" placeholder="인증코드" minlength="6" maxlength="6" disabled>
-      <button type="button" id="sendAuthBtn">발송</button>
-      <span id="authMessage"></span>
-    </div>
+		<div class="form">
+			<label for="auth-code">인증코드</label>
+			<div class="input-group">
+				<input type="text" id="auth-code" name="auth_code"
+					placeholder="인증코드" minlength="6" maxlength="6" disabled />
+				<button type="button" id="sendAuthBtn">발송</button>
+			</div>
+			<span id="authMessage"></span>
+		</div>
 
-    <!-- 나머지 회원가입 정보 입력 -->
-    <div class="form2">
-      <input type="text" id="name" name="name" placeholder="이름을 입력해주세요." minlength="2" maxlength="7" required>
-    </div>
+		<!-- 나머지 회원가입 정보 입력 -->
+		<div class="form2">
+			<label for="auth-code">이름</label> <input type="signinput" id="name"
+				name="name" placeholder="이름을 입력해주세요." minlength="2" maxlength="7"
+				required>
+		</div>
 
-    <div class="form2">
-      <input type="tel" id="phone" name="phone" placeholder="전화번호를 입력해주세요.(- 하이픈 제외)" minlength="8" maxlength="15"
-        required>
-      <span id="phoneMessage"></span>
-    </div>
+		<div class="form2">
+			<label for="auth-code">전화번호</label> <input type="signinput"
+				id="phone" name="phone" placeholder="전화번호를 입력해주세요.(- 하이픈 제외)"
+				minlength="8" maxlength="15" required> <span
+				id="phoneMessage"></span>
+		</div>
 
-    <div class="form2">
-      <input type="text" id="nickname" name="nickname" placeholder="닉네임을 입력해주세요." minlength="2" maxlength="12" required>
-    </div>
+		<div class="form2">
+			<label for="auth-code">닉네임</label> <input type="signinput"
+				id="nickname" name="nickname" placeholder="닉네임을 입력해주세요."
+				minlength="2" maxlength="12" required>
+		</div>
 
-    <div class="form2">
-      <input type="text" id="address" name="address" placeholder="주소" readonly required>
-      <input type="button" onclick="sample5_execDaumPostcode()" value="주소 검색">
-      <br>
-      <div id="map" style="width: 300px; height: 300px; margin-top: 10px; display: none"></div>
-    </div>
+		<div class="form2">
+			<label for="address">주소</label>
+			<div class="input-group">
+				<input type="text" id="address" name="address" placeholder="주소"
+					readonly required> <input type="button"
+					onclick="sample5_execDaumPostcode()" value="주소 검색" id="sendAuthBtn">
+				<div id="map"
+					style="width: 300px; height: 300px; margin-top: 10px; display: none"></div>
+			</div>
+		</div>
 
-    <div>
-      <button id="register" class="button own" type="submit">회원가입</button>
-      <span id="registerMessage"></span>
-    </div>
+		<div>
+			<button id="register" class="button_own" type="submit">회원가입</button>
+			<span id="registerMessage"></span>
+		</div>
 
-    <div>
-      <button class="button own" onclick="location.href='<c:url value="/main.do"/>'">메인</button>
-    </div>
+		<div>
+			<button id="return_main" class="button_own"
+				onclick="location.href='<c:url value='/main.do' />'">
+				메인으로 돌아가기</button>
+		</div>
 
-  </form>
+	</form>
 
-  <br />
-  <hr />
-  <footer>
-    <p>
-      도움이 필요하면 <a href="#">이메일</a> 또는 고객센터 1670-2910로 문의 부탁드립니다.
-    </p>
-    <p>고객센터 운영시간: 09:18시(점심시간 12~13시, 주말/공휴일 제외)</p>
-  </footer>
+	<br />
+	<hr />
+	<footer>
+		<p>
+			도움이 필요하면 <a href="#">이메일</a> 또는 고객센터 1670-2910로 문의 부탁드립니다.
+		</p>
+		<p>고객센터 운영시간: 09:18시(점심시간 12~13시, 주말/공휴일 제외)</p>
+	</footer>
 
-  <script>
+	<script>
     // 인증 번호 요청
     $('#sendAuthBtn').on('click', function () {
 
@@ -137,10 +152,12 @@
       }); // http 요청 -- end
     }); // 회원가입 -- end
   </script>
-  
-  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-  <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6494369aebd01baf926e57a1affa1288&libraries=services"></script>
-  <script>
+
+	<script
+		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6494369aebd01baf926e57a1affa1288&libraries=services"></script>
+	<script>
     var mapContainer = document.getElementById('map'), // 지도를 표시할 div
       mapOption = {
         center: new daum.maps.LatLng(37.537187, 127.005476), // 지도의 중심좌표
