@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>당신 근처의 도토리</title>
     <link rel="stylesheet" href="../css/main.css" />
+    <!-- 드롭다운, 검색 아이콘 링크 -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
+    <!--  -->
     <script src="../js/jquery_3_7_1.js"></script>
   </head>
   <body>
+        <!-- 헤더 시작 -->
     <div>
     <header>
       <div class="topBannerImg">
@@ -34,7 +37,9 @@
               <input type="text" placeholder="검색어를 입력해주세요" />
               <span class="material-symbols-outlined search-img"> search </span>
             </div>
-            <!-- 인기 검색어 -->
+
+           
+           <div class="max"><!-- 인기 검색어 -->
             <p class="keyword">
               인기 검색어
               <a href="#">아이폰</a>
@@ -47,17 +52,24 @@
               <a href="#">전기자전거</a>
               <a href="#">식탁</a>
               <a href="#">모니터</a>
+              
             </p>
+        
+            </div>
+            
           </form>
 
           <!-- 검색창 끝 -->
         </div>
         <!-- 검색창 + 키워드 코드 입력란 끝 -->
-
-        <a href="/html/login.html" class="headerBtn">로그인/회원가입</a>
-        <a href="#" class="headerBtn mypage">마이페이지</a>
+     
+        <button onclick="location.href='../html/login.html'" id="loginBtn" class="headerBtn ">로그인/회원가입</button>
+        <button onclick="location.href='../html/login.html'" class="headerBtn " >마이페이지</button>
+        
+        
       </header>
     </div>
+    <!-- 헤더 끝 -->
 
     <!-- 당근 배너 임의로 가져온 상태 (추후 변경) -->
     <div class="banner"><img src="../images/banner.png" /></div>
@@ -141,10 +153,6 @@
       <div><strong>고객문의</strong> abc@email.com</div>
     </footer>
 
-  <!-- 임시 버튼 -->
-  <div>
-    <button id="logoutBtn" class="headerBtn">로그아웃</button>
-  </div>
 
     <!-- 캐러셀 js -->
     <script src="../js/main.js">
@@ -175,6 +183,20 @@
     }) // 로그아웃 -- end
 
   </script>
+
+    <!-- 로그인시 로그인/회원가입이 로그아웃으로 변경되는 자바스크립트 임시 코드 -->
+    <script>
+      // 특정 버튼을 선택
+      const loginBtn = document.getElementById("loginBtn");
+
+      // 버튼의 텍스트 변경
+      loginBtn.textContent = "상품등록";
+
+      // 클릭 이벤트 변경
+      loginBtn.onclick = function () {
+        location.href = "../html/product_register.html"; // 이동할 페이지
+      };
+    </script>
 
   </body>
 </html>

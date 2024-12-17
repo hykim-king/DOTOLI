@@ -1,3 +1,4 @@
+/* 헤더 디자인 시작 */
 html {
   height: 72.8px;
   width: 1536px;
@@ -61,8 +62,9 @@ form {
   margin-top: 55px;
   margin-bottom: 10px;
   height: 40px;
-  width: 55%;
-  margin-left: 0px;
+  width: 25%;
+  margin-left: -3vh;
+  margin-right: 25vh;
   background-color: transparent;
 }
 
@@ -168,6 +170,8 @@ input {
 .keyword a:hover {
   text-decoration: underline;
 }
+
+/* 헤더 끝 */
 
 .banner img {
   height: 470px;
