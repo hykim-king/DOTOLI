@@ -18,11 +18,11 @@
     <div>
     <header>
       <div class="topBannerImg">
-        <img src="/ehr/resources/assets/images/headerBanner.png" class="headerBanner" />
+        <img src="../images/headerBanner.png" class="headerBanner" />
       </div>
 
       <div id="header">
-        <img src="/ehr/resources/assets/images/logo.svg" class="headerImg" />
+        <img src="../images/logo.svg" class="headerImg" />
         <!-- 검색창 + 키워드 코드 입력란 -->
         <div class="mainSector">
           <!-- 검색창 시작 -->
@@ -63,16 +63,31 @@
         </div>
         <!-- 검색창 + 키워드 코드 입력란 끝 -->
      
-        <button onclick="location.href='../html/login.html'" id="loginBtn" class="headerBtn ">로그인/회원가입</button>
-        <button onclick="location.href='../html/login.html'" class="headerBtn " >마이페이지</button>
+        <div>
+      <!-- 로그인/회원가입 버튼 -->
+      <button onclick="location.href='../html/login.html'" id="loginBtn" class="headerBtn ">로그인/회원가입</button>
+
+      <!-- 상품등록 버튼 -->
+      <button onclick="location.href='../html/product_register.html'" class="headerBtn ">상품등록</button>
+
+    </div>
+
+    <div>
+      <!-- 마이페이지 버튼 -->
+      <button onclick="location.href='../html/mypage.html'" class="headerBtn ">마이페이지</button>
+
+      <!-- 로그아웃 버튼 -->
+      <button id="logoutBtn" class="headerBtn ">로그아웃</button>
+    </div>
         
         
       </header>
+      
     </div>
     <!-- 헤더 끝 -->
 
     <!-- 당근 배너 임의로 가져온 상태 (추후 변경) -->
-    <div class="banner"><img src="/ehr/resources/assets/images/banner.png" /></div>
+    <div class="banner"><img src="../images/banner.png" /></div>
     <div>
       <h2>카테고리</h2>
       <!-- 슬라이드 코드 시작 -->
@@ -82,15 +97,15 @@
           <div class="carousel_item">
             <div class="kategoryWrap">
               
-              <img src="/ehr/resources/assets/images/camera.png" alt="카메라" class="kategory camera" />
+              <img src="../images/camera.png" alt="카메라" class="kategory camera" />
               <img
-                src="/ehr/resources/assets/images/microwave.png"
+                src="../images/microwave.png"
                 alt="전자레인지"
                 class="kategory"
               />
-              <img src="/ehr/resources/assets/images/chair.png" alt="의자" class="kategory" />
-              <img src="/ehr/resources/assets/images/pot.png" alt="냄비" class="kategory" />
-              <img src="/ehr/resources/assets/images/toy.png" alt="인형" class="kategory" />
+              <img src="../images/chair.png" alt="의자" class="kategory" />
+              <img src="../images/pot.png" alt="냄비" class="kategory" />
+              <img src="../images/toy.png" alt="인형" class="kategory" />
             </div>
             <div class="kategoryWrap kategoryH">
               <a href="#"><strong>디지털기기</strong></a>
@@ -105,23 +120,23 @@
           <div class="carousel_item">
             <div class="kategoryWrap">
               <img
-                src="/ehr/resources/assets/images/childBook.png"
+                src="../images/childBook.png"
                 alt="유아도서"
                 class="kategory"
               />
               <img
-                src="/ehr/resources/assets/images/fclothes.png"
+                src="../images/fclothes.png"
                 alt="여성의류"
                 class="kategory"
               />
-              <img src="/ehr/resources/assets/images/bag.png" alt="여성잡화" class="kategory" />
+              <img src="../images/bag.png" alt="여성잡화" class="kategory" />
               <img
-                src="/ehr/resources/assets/images/mclothes.png"
+                src="../images/mclothes.png"
                 alt="남성패션/잡화"
                 class="kategory"
               />
               <img
-                src="/ehr/resources/assets/images/fashion.png"
+                src="../images/fashion.png"
                 alt="뷰티/미용"
                 class="kategory"
               />
@@ -155,7 +170,7 @@
 
 
     <!-- 캐러셀 js -->
-    <script src="/ehr/resources/assets/js/main.js">
+    <script src="../js/main.js">
     
     </script>
 
@@ -185,7 +200,7 @@
   </script>
 
     <!-- 로그인시 로그인/회원가입이 로그아웃으로 변경되는 자바스크립트 임시 코드 -->
-    <script>
+    <!-- <script>
       // 특정 버튼을 선택
       const loginBtn = document.getElementById("loginBtn");
 
@@ -195,8 +210,8 @@
       // 클릭 이벤트 변경
       loginBtn.onclick = function () {
         location.href = "../html/product_register.html"; // 이동할 페이지
-      };
-    </script>
+      }; 
+    </script> -->
 
   </body>
 </html>

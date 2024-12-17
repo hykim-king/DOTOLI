@@ -20,7 +20,7 @@ html {
   height: 78px;
   margin-top: -5vh;
   position: relative;
-  margin-bottom: 3vh;
+  margin-bottom: 5vh;
 }
 
 .headerBanner {
@@ -57,30 +57,21 @@ form {
   margin-top: 30px;
 }
 
+/* headerBtn 공통 스타일 */
 .headerBtn {
-  font-size: small;
-  margin-top: 55px;
-  margin-bottom: 10px;
+  font-size: small; /* 위 여백 조정 */
+  margin-top: 2vh;
+  margin-bottom: -3vh;
   height: 40px;
-  width: 25%;
-  margin-left: -3vh;
+  width: 40%;
+  margin-left: 2vh;
   margin-right: 25vh;
   background-color: transparent;
 }
 
 .headerBtn:hover {
-  color: #8d6e63;
+  color: #8d6e63; /* 호버 시 색상 */
   cursor: pointer;
-}
-
-.headerBtn a {
-  color: black;
-  margin-bottom: 50px;
-}
-
-.mypage {
-  margin-left: -7vh;
-  margin-right: 200px;
 }
 
 .dropdown {
