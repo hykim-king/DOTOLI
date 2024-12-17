@@ -77,6 +77,10 @@ form {
   cursor: pointer;
 }
 
+#loginBtn:hover {
+  cursor: pointer;
+}
+
 .dropdown {
   display: flex; /* Flexbox를 사용해 수평 정렬 */
   align-items: center; /* 세로 중앙 정렬 */
@@ -345,7 +349,7 @@ p {
   display: inline-block; /* 체크박스를 인라인 블록으로 설정 */
   vertical-align: middle; /* 텍스트와 수직 정렬 */
   margin-right: 1vh;
-  margin-left: -13vh;
+  margin-left: -11vh;
 }
 
 /* 체크된 상태 스타일 */
@@ -470,7 +474,8 @@ p {
 
 /* 오른쪽 박스 CSS */
 .right-panel {
-  width: 70%;
+  width: 80%;
+  height: 192vh;
   min-height: 800px;
   padding: 40px;
   border: 1px solid #ddd;

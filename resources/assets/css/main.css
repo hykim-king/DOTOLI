@@ -74,6 +74,10 @@ form {
   cursor: pointer;
 }
 
+#loginBtn:hover {
+  cursor: pointer;
+}
+
 .dropdown {
   display: flex; /* Flexbox를 사용해 수평 정렬 */
   align-items: center; /* 세로 중앙 정렬 */
@@ -186,6 +190,15 @@ div h2 {
   margin-left: 25%;
 }
 
+.kategoryWrap img {
+  width: 20%;
+}
+
+.kategoryWrap img:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s ease-in-out;
+}
+
 .kategory {
   max-width: 1400px;
   width: 150px;
@@ -200,7 +213,7 @@ div h2 {
   height: 174px;
   width: 100%;
   margin-top: -5%;
-  gap: 11vh;
+  gap: 10vh;
 
   /* 기존 gap 값을 수정 */
 }
@@ -209,6 +222,7 @@ div h2 {
   text-align: center; /* 텍스트 가운데 정렬 */
   display: inline-block; /* 인라인 블록 요소 */
   width: 100px; /* 각 항목의 너비 고정 */
+  font-size: 14px;
 }
 
 .camera {
@@ -244,18 +258,28 @@ div h2 {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  height: 5%;
   margin-left: -7vh;
+  border-color: #8d6e63;
 }
 
 .carousel_prev,
 .carousel_next {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: transparent;
   color: black;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   margin: 0 20%;
+  width: 2.5%;
+  border-radius: 50px;
+  border-color: #8d6e63;
+}
+
+.carousel_prev:hover,
+.carousel_next:hover {
+  transform: scale(1.2);
 }
 
 footer {
