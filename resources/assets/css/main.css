@@ -1,25 +1,26 @@
+/* 헤더 디자인 시작 */
 html {
-  margin-left: -5px;
-  max-height: 100%;
-  margin-top: -70px;
-  max-width: 100%;
+  height: 72.8px;
+  width: 1536px;
+  min-width: 72px;
+  bottom: 622.4px;
+  margin: 0;
 }
 
 #header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 100%;
+  justify-content: center; /* Center content horizontally */
+  width: 120%;
+  height: 72px;
+  margin-left: 7vh;
 }
-
-.container {
+.topBannerImg {
   width: 150%;
-  height: 180px;
-  overflow: hidden;
+  height: 78px;
+  margin-top: -5vh;
   position: relative;
-  margin-top: -30px;
-  margin-bottom: -50px;
+  margin-bottom: 5vh;
 }
 
 .headerBanner {
@@ -27,13 +28,7 @@ html {
   width: 100%;
   top: 50%;
   bottom: 50%;
-  transform: translate(-15%);
-}
-
-.logo {
-  max-width: 100%;
-  margin-top: 60px;
-  margin-left: -20px;
+  transform: translate(-8%);
 }
 
 a {
@@ -42,25 +37,19 @@ a {
 }
 
 .headerImg {
-  height: 250px;
+  height: 60px;
   width: 100%;
-  max-width: 250px;
   margin-bottom: -35px;
   margin-left: 180px;
   margin-right: -50px;
 }
 
 .mainSector {
-  max-width: 100%;
+  max-width: 50%;
   display: flex;
   justify-content: center;
   gap: 40px;
   flex: 1; /* 남은 공간을 차지해서 가운데 위치 */
-}
-
-.headerImg + .mainSector {
-  max-width: 100%;
-  margin-left: auto;
 }
 
 form {
@@ -68,45 +57,36 @@ form {
   margin-top: 30px;
 }
 
+/* headerBtn 공통 스타일 */
 .headerBtn {
-  margin-right: 30px;
-  margin-top: 55px;
-  margin-bottom: 10px;
-  margin-left: -20px;
+  font-size: small; /* 위 여백 조정 */
+  margin-top: 2vh;
+  margin-bottom: -3vh;
   height: 40px;
-  width: 80px;
-  border-radius: 20px;
-  border-style: none;
+  width: 40%;
+  margin-left: 2vh;
+  margin-right: 25vh;
   background-color: transparent;
-  max-width: 100%;
 }
 
 .headerBtn:hover {
-  color: #8d6e63;
-}
-
-.headerBtn a {
-  color: black;
-  margin-bottom: 50px;
-}
-
-.mypage {
-  margin-left: -1px;
-  margin-right: 200px;
+  color: #8d6e63; /* 호버 시 색상 */
+  cursor: pointer;
 }
 
 .dropdown {
-  max-width: 100%;
   display: flex; /* Flexbox를 사용해 수평 정렬 */
   align-items: center; /* 세로 중앙 정렬 */
   border: solid 2px lightgray;
-  border-radius: 10px;
-  width: 800px;
-  height: 60px;
+  border-radius: 5px;
+  width: 600px;
+  height: 45px;
   padding: 0 10px; /* 내부 여백 추가 */
   box-sizing: border-box;
   gap: 10px; /* 요소 간 여백 설정 */
-  margin-top: 55px;
+  margin-top: 65px;
+  margin-left: -4vh;
+  margin-right: 8vh;
   overflow: hidden;
 }
 
@@ -124,6 +104,7 @@ form {
   max-width: 100%;
   padding-bottom: 7px;
   overflow: hidden;
+  margin-top: 8px;
 }
 
 input {
@@ -131,7 +112,7 @@ input {
   border: none;
   outline: none;
   font-size: 16px;
-  margin-top: 4px;
+  margin-top: 1px;
   max-width: 100%;
   overflow: hidden;
 }
@@ -141,6 +122,8 @@ input {
   height: 30px;
   cursor: pointer;
   margin-bottom: 5px;
+  margin-top: 15px;
+  margin-right: -2vh;
 }
 
 .row-hr {
@@ -150,66 +133,86 @@ input {
 }
 
 .keyword {
-  font-size: small;
   display: flex;
-  justify-content: left;
-  gap: 10px;
-  margin-left: 130px;
+  max-width: 100%;
+  max-height: 45px;
+  justify-content: center;
+  font-size: small;
   color: #212124;
   margin-bottom: 30px;
+  align-items: center;
   font-weight: bolder;
+  margin-top: 2vh;
+  margin-left: -9vh;
+  margin-right: 10vh;
 }
 
 .keyword a {
+  display: flex;
+  max-width: 100%;
+  max-height: 45px;
   font-size: small;
   color: #96a6b3;
+  margin-left: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
 .keyword a:hover {
   text-decoration: underline;
 }
 
+/* 헤더 끝 */
+
 .banner img {
-  height: 50%;
-  width: 105%;
+  height: 470px;
+  width: 1920px;
+  margin-top: 7vh;
+  margin-left: -1vh;
   margin-bottom: 30px;
 }
 
 div h2 {
-  margin-left: 10%;
+  margin-left: 25%;
+  width: 60%;
 }
 
 .kategoryWrap {
   display: flex;
   justify-content: center;
-  gap: 70px;
-  width: 100%;
+  gap: 5vh;
+  width: 60%;
   transition: transform 1s;
-  margin-top: 40px;
+  margin-left: 25%;
 }
 
 .kategory {
-  width: 100%;
-  height: 180px;
+  max-width: 1400px;
+  width: 150px;
+  height: 150px;
   border-radius: 150px;
   display: flex;
+  justify-content: space-evenly;
 }
 
 .kategoryH {
-  display: flex;
-  justify-content: space-evenly;
   align-items: center;
-  margin: 15px 0px;
-  max-width: 100%;
-  margin: 15px auto;
-  gap: 90px;
+  height: 174px;
+  width: 100%;
+  margin-top: -5%;
+  gap: 11vh;
+
+  /* 기존 gap 값을 수정 */
 }
 
 .kategoryH a {
   text-align: center; /* 텍스트 가운데 정렬 */
   display: inline-block; /* 인라인 블록 요소 */
-  width: 100%; /* 각 항목의 너비 고정 */
-  padding: 10px 0; /* 내부 여백 추가 */
+  width: 100px; /* 각 항목의 너비 고정 */
+}
+
+.camera {
+  transform: translateY(10px);
 }
 
 .carousel_container {
@@ -236,11 +239,12 @@ div h2 {
 /* 캐러셀 버튼 */
 .carousel_button_container {
   position: absolute;
-  top: 115%;
+  top: 95%;
   transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin-left: -7vh;
 }
 
 .carousel_prev,
@@ -251,149 +255,19 @@ div h2 {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  margin: 0 10%;
+  margin: 0 20%;
 }
 
 footer {
+  min-height: 20vh;
   height: 60px;
   position: relative;
-  margin-top: 15%;
-  transform: translateY(0%);
+  margin-top: 5%;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  margin-left: 10%;
+  margin-left: 16%;
   display: flex;
   flex-direction: column;
   color: #96a6b3;
-}
-
-/* 화면 너비가 1024px 이하일 때 */
-@media screen and (max-width: 1024px) {
-  #header {
-    flex-direction: column; /* 헤더를 세로로 배치 */
-    align-items: center;
-    gap: 10px;
-  }
-
-  .mainSector {
-    flex-direction: column; /* 검색창 세로 정렬 */
-    width: 100%; /* 전체 너비 사용 */
-    align-items: center;
-    gap: 10px;
-  }
-
-  .dropdown {
-    width: 90%; /* 검색창 너비 조정 */
-    height: 50px; /* 높이 줄이기 */
-  }
-
-  .headerImg {
-    width: 180px; /* 로고 크기 줄이기 */
-    height: auto;
-    margin: 0 auto;
-  }
-
-  .headerBtn {
-    width: 100px; /* 버튼 너비 고정 */
-    font-size: 14px; /* 글자 크기 줄이기 */
-    margin: 5px; /* 여백 줄이기 */
-  }
-
-  .mypage {
-    margin-right: 0; /* 마이페이지 여백 조정 */
-  }
-}
-
-/* 화면 너비가 768px 이하일 때 */
-@media screen and (max-width: 768px) {
-  #header {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .container {
-    height: auto; /* 배너 높이 자동 조정 */
-  }
-
-  .headerImg {
-    width: 150px; /* 로고 이미지 더 작게 */
-  }
-
-  .dropdown {
-    width: 100%;
-    max-width: 400px; /* 검색창 최대 너비 제한 */
-  }
-
-  .dropdownBtnImg {
-    max-width: 70%;
-    padding-bottom: 7px;
-    overflow: hidden;
-  }
-
-  input {
-    font-size: 14px; /* 입력창 글자 크기 조정 */
-  }
-
-  .headerBtn {
-    font-size: 12px; /* 버튼 글자 크기 조정 */
-    margin: 5px 0; /* 버튼 간격 조정 */
-  }
-
-  .banner img {
-    width: 100%; /* 배너 이미지 화면 너비에 맞춤 */
-    height: auto;
-  }
-
-  .kategoryWrap {
-    flex-wrap: wrap; /* 카테고리 여러 줄로 배치 */
-    gap: 10px;
-  }
-
-  .kategory {
-    width: 80px; /* 이미지 크기 축소 */
-    height: 80px;
-  }
-
-  .kategoryH a {
-    font-size: 12px; /* 카테고리 텍스트 축소 */
-  }
-
-  .carousel_button_container {
-    display: none; /* 작은 화면에서 캐러셀 버튼 숨김 */
-  }
-}
-
-/* 화면 너비가 480px 이하일 때 */
-@media screen and (max-width: 480px) {
-  .headerImg {
-    width: 100px; /* 로고 이미지 더 작게 */
-  }
-
-  .dropdown {
-    width: 90%;
-    height: 40px; /* 검색창 높이 줄이기 */
-  }
-
-  #dropdownBtn {
-    font-size: 12px; /* 드롭다운 버튼 글자 축소 */
-  }
-
-  input {
-    font-size: 12px;
-  }
-
-  .headerBtn {
-    width: 80px;
-    font-size: 12px; /* 버튼 더 작게 */
-  }
-
-  .kategoryWrap {
-    gap: 5px; /* 카테고리 간격 줄이기 */
-  }
-
-  .kategory {
-    width: 60px;
-    height: 60px;
-  }
 }
