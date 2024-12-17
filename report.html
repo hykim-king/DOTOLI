@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>신고하기</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+  <style>
+    .modalReport {
+      position: absolute;
+      display: none;
+      justify-content: center;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .report_body {
+      position: absolute;
+      top: 50%;
+      width: 600px;
+      height: 500px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 3px rgba(34, 36, 38, 0.15);
+      transform: translateY(-50%);
+    }
+
+    .report_body h1 {
+      margin: 4px 0 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .report_body a {
+      cursor: pointer;
+    }
+
+    .report_body textarea {
+      display: block;
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      resize: none;
+    }
+
+    .report_body select {
+      width: 100%;
+      padding: 10px;
+      font-size: 0.8em;
+    }
+
+    .doReportBtn {
+      position: absolute;
+      width: 50%;
+      padding: 14px;
+      background: #A86202;
+      color: white;
+      border: 1px solid #A86202;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 2px 0 #eee;
+      bottom: 4%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .doReportBtn:hover {
+      background: #814c01;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="modalReport">
+    <div class="report_body">
+      <h1>신고하기 <a class="closeReportBtn"><i class="fa-solid fa-xmark"></i></a></h1>
+      <hr>
+      <h3>신고 게시글 제목</h3>
+      <div>
+        <select id="reportCategory" required>
+          <option value="0" disabled hidden selected>신고 사유를 선택하세요</option>
+          <option value="1">거래 금지 물품이에요</option>
+          <option value="2">중고거래 게시글이 아니에요</option>
+          <option value="3">전문판매업자 같아요</option>
+          <option value="4">거래 중 분쟁이 발생했어요</option>
+          <option value="5">사기인 것 같아요</option>
+          <option value="6">기타 부적절한 행위가 있어요</option>
+        </select>
+      </div>
+
+      <div>
+        <textarea id="reportReason" rows="15px" placeholder="상세 설명란" maxlength="2000" required></textarea>
+      </div>
+
+      <button class="doReportBtn">신고</button>
+    </div>
+  </div>
+
+  <button class="openReportBtn">신고하기</button>
+
+  <script>
+    const modalReport = document.querySelector('.modalReport');
+    const openReportBtn = document.querySelector('.openReportBtn');
+    const closeReportBtn = document.querySelector('.closeReportBtn');
+    const selectElement = document.querySelector('.report_body select');
+    const textareaElement = document.querySelector('.report_body textarea');
+    const doReportBtn = document.querySelector('.doReportBtn');
+
+    openReportBtn.addEventListener("click", () => {
+      modalReport.style.display = "flex";
+    });
+
+    function closeModal() {
+      modalReport.style.display = "none";
+      selectElement.selectedIndex = 0;
+      textareaElement.value = '';
+    }
+
+    closeReportBtn.addEventListener("click", () => {
+      closeModal();
+    });
+
+    window.addEventListener("click", (event) => {
+      if (event.target === modalReport) {
+        closeModal();
+      }
+    });
+
+    doReportBtn.addEventListener("click", (event) => {
+      event.preventDefault();
+      if (selectElement.selectedIndex === 0) {
+        alert("신고 사유를 선택해주세요.");
+        return;
+      }
+      if (textareaElement.value.trim() === '') {
+        alert("상세 설명란을 작성해주세요.");
+        return;
+      } 
+        alert("신고가 접수 되었습니다.");
+        closeModal();
+    });
+
+    // http 요청
+    $.ajax({
+      url: '/ehr/registerSave.do',
+      method: 'POST',
+      contentType: 'application/json',
+      data: JSON.stringify(formData),
+      success: function(response) {
+        if(response.messageId === 1){
+          alert(response.message);
+          window.location.href = "/ehr/user/login/login.do"
+        } else{
+          alert(response.message);
+        }
+      },
+      error: function() {
+        $('#registerMessage').text('회원가입 중 에러가 발생했습니다.');
+      }
+    }); // http 요청 -- end
+
+  </script>
+</body>
+</html>
