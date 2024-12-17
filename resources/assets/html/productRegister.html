@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>상품 상세페이지</title>
+    <title>상품 목록</title>
     <link rel="stylesheet" href="../css/productRegister.css" />
     <link
       rel="stylesheet"
@@ -90,44 +90,186 @@
       </div>
     </div>
     <div class="container">
+       <!-- 왼쪽 패널 시작 -->
       <div class="left-panel">
           <div class="profile-box">
               <div class="profile-image">
-                
                   <input type="file" id="profile-input" style="display: none;" accept="image/*">
-                  
               </div>
 
-              <!-- 왼쪽 패널 시작 -->
-              
-
-              <div class="info-box">
-                  <label for="nickname-input">닉네임</label>
-                  <div class="input-container">
-                     
+              <div class="filter">
+                <h2>필터
+                  <span><button>초기화</button></span>
+                </h2>
+                <div class="checkboxW">   
+                  <input type="checkbox" class="custom-checkbox">
+                  <span>거래 가능만 보기</span>
+                </div>
+                  <hr class="hr">
+                </div>
+                
+               <!-- 위치 시작 -->
+                <div class="area"> <h3>위치</h3>
+                  <div class="radio-margin"> 
+                    <input type="radio" name="location" value="1" class="custom-radio5"> 서울특별시
                   </div>
-              </div>
 
-              <div class="info-box">
-                  <label for="phone-input">전화번호</label>
-                  <div class="input-container">
-                     
+                  <div class="radio-margin"> 
+                    <input type="radio" name="location" value="2" class="custom-radio5"> 부산광역시
                   </div>
-              </div>
 
-              <div class="info-box">
-                  <label for="address-input">주소</label>
-                  <div class="input-container">
-                     
+                  <div class="radio-margin"> 
+                    <input type="radio" name="location" value="3" class="custom-radio5"> 대구광역시
                   </div>
-              </div>
 
-              <div class="info-box">
-                  <label for="name-input">이름</label>
-                  <div class="input-container">
-                     
+                  <div class="radio-margin"> 
+                    <input type="radio" name="location" value="4" class="custom-radio5"> 인천광역시
                   </div>
-              </div>
+
+                  <div class="radio-margin"> 
+                    <input type="radio" name="location" value="5" class="custom-radio5"> 광주광역시
+                  </div>
+
+                  <div class="radio-margin"> 
+                    <input type="radio" name="location" value="6" class="custom-radio5"> 대전광역시
+                  </div>
+
+                  <div class="radio-margin"> 
+                    <input type="radio" name="location" value="7" class="custom-radio5"> 울산광역시
+                  </div>
+
+                  <div class="radio-margin"> 
+                    <input type="radio" name="location" value="8" class="custom-radio5 custom-radio7"> 세종특별자치시
+                  </div>
+
+                  <div class="radio-margin"> 
+                    <input type="radio" name="location" value="9" class="custom-radio5 custom-radio3"> 경기도
+                  </div>
+
+                  <div class="radio-margin"> 
+                    <input type="radio" name="location" value="10" class="custom-radio5 custom-radio7"> 강원특별자치도
+                  </div>
+
+                  <div class="radio-margin"> 
+                    <input type="radio" name="location" value="11" class="custom-radio5 custom-radio4"> 충청북도
+                  </div>
+
+                  <div class="radio-margin"> 
+                    <input type="radio" name="location" value="12" class="custom-radio5 custom-radio4"> 충청남도
+                  </div>
+
+                  <div class="radio-margin"> 
+                    <input type="radio" name="location" value="13" class="custom-radio5 custom-radio7"> 전북특별자치도
+                  </div>
+
+                  <div class="radio-margin"> 
+                    <input type="radio" name="location" value="14" class="custom-radio5 custom-radio4"> 전라남도
+                  </div>
+
+                  <div class="radio-margin"> 
+                    <input type="radio" name="location" value="15" class="custom-radio5 custom-radio4"> 경상북도
+                  </div>
+
+                  <div class="radio-margin"> 
+                    <input type="radio" name="location" value="16" class="custom-radio5 custom-radio4"> 경상남도
+                  </div>
+
+                  <div class="radio-margin"> 
+                    <input type="radio" name="location" value="17" class="custom-radio5 custom-radio7"> 제주특별자치도
+                  </div>
+         
+                <hr class="hr">
+                </div>
+                <!-- 위치 끝 -->
+
+
+                <!-- 카테고리 시작 -->
+                <div class="kategory"> <h3>카테고리</h3>
+                  <div class="radio-margin"> 
+                    <input type="radio" name="category" value="100" class="custom-radio5"> 디지털기기
+                  </div>
+
+                  <div class="radio-margin"> 
+                    <input type="radio" name="category" value="101" class="custom-radio5 custom-radio4"> 생활가전
+                  </div>
+
+                  <div class="radio-margin"> 
+                    <input type="radio" name="category" value="102" class="custom-radio5 custom-radio7-5"> 가구/인테리어
+                  </div>
+
+                  <div class="radio-margin"> 
+                    <input type="radio" name="category" value="103" class="custom-radio5 custom-radio5-5"> 생활/주방
+                  </div>
+
+                  <div class="radio-margin"> 
+                    <input type="radio" name="category" value="104" class="custom-radio5 custom-radio3"> 유아동
+                  </div>
+
+                  <div class="radio-margin"> 
+                    <input type="radio" name="category" value="105" class="custom-radio5 custom-radio7-5"> 여성패션/잡화
+                  </div>
+
+                  <div class="radio-margin"> 
+                    <input type="radio" name="category" value="106" class="custom-radio5 custom-radio7-5"> 남성패션/잡화
+                  </div>
+
+                  <div class="radio-margin"> 
+                    <input type="radio" name="category" value="107" class="custom-radio5 custom-radio5-5"> 뷰티/미용
+                  </div>
+
+                  <div class="radio-margin"> 
+                    <input type="radio" name="category" value="108" class="custom-radio5 custom-radio6-5"> 스포츠/레저
+                  </div>
+
+                  <div class="radio-margin"> 
+                    <input type="radio" name="category" value="109" class="custom-radio5 custom-radio8"> 취미/게임/음반
+                  </div>
+
+                  <div class="radio-margin"> 
+                    <input type="radio" name="category" value="110" class="custom-radio5 custom-radio2"> 도서
+                  </div>
+
+                  <div class="radio-margin"> 
+                    <input type="radio" name="category" value="111" class="custom-radio5 custom-radio6-5"> 티켓/교환권
+                  </div>
+
+                  <div class="radio-margin"> 
+                    <input type="radio" name="category" value="112" class="custom-radio5 custom-radio4-5"> 가공식품
+                  </div>
+
+                  <div class="radio-margin"> 
+                    <input type="radio" name="category" value="113" class="custom-radio5 custom-radio6"> 건강기능식품
+                  </div>
+
+                  <div class="radio-margin"> 
+                    <input type="radio" name="category" value="114" class="custom-radio5 custom-radio6"> 반려동물용품
+                  </div>
+
+                  <div class="radio-margin"> 
+                    <input type="radio" name="category" value="115" class="custom-radio5 custom-radio2"> 식물
+                  </div>
+
+                  <div class="radio-margin"> 
+                    <input type="radio" name="category" value="116" class="custom-radio5 custom-radio8-5"> 기타 중고 물품
+                  </div>
+
+                <hr class="hr">
+                </div>
+
+                <!-- 카테고리리 끝 -->
+
+                  <!-- 카테고리 시작 -->
+                  <div class="area"> <h3>가격</h3>
+                    <div class="radio-margin"> 
+                      <input type="radio" name="price" value="18" class="custom-radio5 custom-radio3"> 저가순
+                    </div>
+  
+                    <div class="radio-margin"> 
+                      <input type="radio" name="price" value="19" class="custom-radio5 custom-radio3"> 고가순
+                    </div>
+                    <hr class="hr">
+                  </div>
+             
           </div>
       </div>
         <!-- 왼쪽 패널 끝 -->

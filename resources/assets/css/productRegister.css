@@ -5,6 +5,9 @@ html {
   min-width: 72px;
   bottom: 622.4px;
   margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Pretendard Variable",
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 #header {
@@ -163,6 +166,7 @@ input {
 }
 /* header css 종료 */
 
+/* 검색어 검색 결과 CSS */
 .navbar {
   display: flex;
   justify-content: left;
@@ -176,16 +180,23 @@ p {
   font-size: 28px;
 }
 
+.navbar h1 {
+  margin-top: -4vh;
+}
+
+/* 전체 박스 CSS */
+
 .container {
   display: flex;
   max-width: 1280px;
-  margin-top: 40px;
+  margin-top: 20px;
   margin-bottom: 20px;
   margin-left: 40vh;
   gap: 20px;
   align-items: flex-start;
 }
 
+/* 왼쪽 박스 CSS */
 .left-panel {
   width: 30%;
   min-height: 1780px;
@@ -242,7 +253,7 @@ p {
 }
 
 .info-box {
-  margin-bottom: 15px;
+  margin-bottom: 20vh;
   text-align: left;
 }
 
@@ -299,6 +310,165 @@ p {
   background-color: #814c01;
 }
 
+/* filter 시작 */
+.filter h2 {
+  margin-top: -3vh;
+  margin-left: -12vh;
+  font-size: 20px;
+}
+
+.filter button {
+  margin-left: 50%;
+  margin-right: -12vh;
+  border-style: none;
+  background-color: transparent;
+  color: #868b94;
+  text-decoration: underline;
+}
+
+.filter button:hover {
+  color: black;
+}
+
+.checkboxW {
+  margin-top: 4vh;
+  margin-bottom: 2vh; /* 아래 여백 조정 */
+}
+
+.custom-checkbox {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  appearance: none;
+  cursor: pointer;
+  display: inline-block; /* 체크박스를 인라인 블록으로 설정 */
+  vertical-align: middle; /* 텍스트와 수직 정렬 */
+  margin-right: 1vh;
+  margin-left: -13vh;
+}
+
+/* 체크된 상태 스타일 */
+.custom-checkbox:checked {
+  background-color: #814c01;
+  border-color: #814c01;
+}
+
+/* 체크 표시 스타일 */
+.custom-checkbox:checked::after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  margin: 3px 7px; /* 체크 표시 위치 */
+}
+
+.checkbox-text {
+  display: inline-block; /* 텍스트를 인라인 블록으로 설정 */
+  vertical-align: middle; /* 체크박스와 수직 정렬 */
+}
+
+.area h3 {
+  margin-top: 3vh;
+  font-size: 16px;
+  font-weight: 700;
+  margin-left: -26vh;
+}
+
+/* 기본 라디오 버튼 스타일 */
+.custom-radio5 {
+  margin-left: -13vh;
+  appearance: none; /* 기본 라디오 버튼 제거 */
+  width: 24px; /* 버튼 크기 */
+  height: 24px; /* 버튼 크기 */
+  border: 2px solid #ccc; /* 테두리 색상 */
+  border-radius: 50%; /* 원 모양 */
+  cursor: pointer; /* 커서 모양 */
+  position: relative; /* ::after의 위치 설정 */
+  background-color: white; /* 기본 배경 색상 */
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.custom-radio2 {
+  margin-left: -19.4vh;
+}
+
+.custom-radio3 {
+  margin-left: -17vh;
+}
+
+.custom-radio4 {
+  margin-left: -15vh;
+}
+
+.custom-radio4-5 {
+  margin-left: -16.5vh;
+}
+
+.custom-radio5-5 {
+  margin-left: -15vh;
+}
+
+.custom-radio6-5 {
+  margin-left: -13.5vh;
+}
+
+.custom-radio7 {
+  margin-left: -9.7vh;
+}
+
+.custom-radio7-5 {
+  margin-left: -11.5vh;
+}
+
+.custom-radio8 {
+  margin-left: -11vh;
+}
+
+.custom-radio8-5 {
+  margin-left: -11.5vh;
+}
+
+/* 선택된 상태 스타일 */
+.custom-radio5:checked {
+  border-color: #814c01; /* 선택된 상태의 테두리 색상 */
+  background-color: #814c01; /* 선택된 상태의 배경 색상 */
+}
+
+/* 선택된 라디오 버튼 안에 작은 원 추가 */
+.custom-radio5:checked::after {
+  content: "";
+  display: block;
+  width: 12px; /* 안쪽 원 크기 */
+  height: 12px; /* 안쪽 원 크기 */
+  border-radius: 50%; /* 원 모양 */
+  background-color: white; /* 안쪽 원 색상 */
+  position: absolute; /* 절대 위치 */
+  top: 50%; /* 상단 가운데 */
+  left: 50%; /* 좌측 가운데 */
+  transform: translate(-50%, -50%); /* 정확한 중앙 정렬 */
+}
+
+.radio-margin {
+  margin-bottom: 15px;
+}
+
+.hr {
+  margin-top: 3vh;
+}
+
+.kategory h3 {
+  margin-top: 3vh;
+  font-size: 16px;
+  font-weight: 700;
+  margin-left: -22vh;
+}
+
+/* 오른쪽 박스 CSS */
 .right-panel {
   width: 70%;
   min-height: 800px;
@@ -358,6 +528,11 @@ p {
 .product img {
   width: 100%;
   border-radius: 8px;
+}
+
+.product img:hover {
+  overflow: hidden;
+  transform: scale(1.1);
 }
 
 .product h3 {
