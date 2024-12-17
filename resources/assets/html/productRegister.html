@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상품 상세페이지</title>
+    <link rel="stylesheet" href="../css/productRegister.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <script src="../js/jquery_3_7_1.js"></script>
+  </head>
+  <body>
+           <!-- 헤더 시작 -->
+           <div>
+            <header>
+              <div class="topBannerImg">
+                <img src="../images/headerBanner.png" class="headerBanner" />
+              </div>
+        
+              <div id="header">
+                <img src="../images/logo.svg" class="headerImg" />
+                <!-- 검색창 + 키워드 코드 입력란 -->
+                <div class="mainSector">
+                  <!-- 검색창 시작 -->
+                  <form>
+                    <div class="dropdown">
+                      <button id="dropdownBtn">중고거래</button>
+                      <span class="material-symbols-outlined dropdownBtnImg">
+                        arrow_drop_down
+                      </span>
+                      <!-- 중고거래 드롭다운 버튼 옆에 있는 막대기 -->
+                      <div class="row-hr"></div>
+                      <input type="text" placeholder="검색어를 입력해주세요" />
+                      <span class="material-symbols-outlined search-img"> search </span>
+                    </div>
+        
+                   
+                   <div class="max"><!-- 인기 검색어 -->
+                    <p class="keyword">
+                      인기 검색어
+                      <a href="#">아이폰</a>
+                      <a href="#">의자</a>
+                      <a href="#">자전거</a>
+                      <a href="#">컴퓨터</a>
+                      <a href="#">책상</a>
+                      <a href="#">소파</a>
+                      <a href="#">원피스</a>
+                      <a href="#">전기자전거</a>
+                      <a href="#">식탁</a>
+                      <a href="#">모니터</a>
+                      
+                    </p>
+                
+                    </div>
+                    
+                  </form>
+        
+                  <!-- 검색창 끝 -->
+                </div>
+                <!-- 검색창 + 키워드 코드 입력란 끝 -->
+             
+                <div>
+              <!-- 로그인/회원가입 버튼 -->
+              <button onclick="location.href='../html/login.html'" id="loginBtn" class="headerBtn ">로그인/회원가입</button>
+        
+              <!-- 상품등록 버튼 -->
+              <button onclick="location.href='../html/productRegister.html'" class="headerBtn ">상품등록</button>
+        
+            </div>
+        
+            <div>
+              <!-- 마이페이지 버튼 -->
+              <button onclick="location.href='../html/mypage.html'" class="headerBtn ">마이페이지</button>
+        
+              <!-- 로그아웃 버튼 -->
+              <button id="logoutBtn" class="headerBtn ">로그아웃</button>
+            </div>
+                
+                
+              </header>
+              
+            </div>
+            <!-- 헤더 끝 -->
+
+    <div class="navbar">
+      <div>
+        <h1>"검색어" 검색 결과</h1>
+      </div>
+    </div>
+    <div class="container">
+      <div class="left-panel">
+          <div class="profile-box">
+              <div class="profile-image">
+                
+                  <input type="file" id="profile-input" style="display: none;" accept="image/*">
+                  
+              </div>
+
+              <!-- 왼쪽 패널 시작 -->
+              
+
+              <div class="info-box">
+                  <label for="nickname-input">닉네임</label>
+                  <div class="input-container">
+                     
+                  </div>
+              </div>
+
+              <div class="info-box">
+                  <label for="phone-input">전화번호</label>
+                  <div class="input-container">
+                     
+                  </div>
+              </div>
+
+              <div class="info-box">
+                  <label for="address-input">주소</label>
+                  <div class="input-container">
+                     
+                  </div>
+              </div>
+
+              <div class="info-box">
+                  <label for="name-input">이름</label>
+                  <div class="input-container">
+                     
+                  </div>
+              </div>
+          </div>
+      </div>
+        <!-- 왼쪽 패널 끝 -->
+
+        <!-- 상품 정보 그리드 시작 -->
+      <div class="right-panel">
+          <div class="tabs">
+              <ul>
+                  <li class="active" onclick="showTab(0)">판매중</li>
+                  <li onclick="showTab(1)">판매 완료</li>
+                  <li onclick="showTab(2)">구매 내역</li>
+              </ul>
+          </div>
+          <div class="tab-content active" id="tab-0">
+              <div class="product-grid" id="product-grid-0"></div>
+              <div class="pagination" id="pagination-0"></div>
+          </div>
+          <div class="tab-content" id="tab-1">
+              <div class="product-grid" id="product-grid-1"></div>
+              <div class="pagination" id="pagination-1"></div>
+          </div>
+          <div class="tab-content" id="tab-2">
+              <div class="product-grid" id="product-grid-2"></div>
+              <div class="pagination" id="pagination-2"></div>
+          </div>
+      </div>
+  </div>
+
+  <script>
+      document.getElementById('profile-input').addEventListener('change', function (event) {
+          const file = event.target.files[0];
+          if (file) {
+              const reader = new FileReader();
+              reader.onload = function (e) {
+                  document.getElementById('profile-img').src = e.target.result;
+              };
+              reader.readAsDataURL(file);
+          }
+      });
+
+      function toggleEdit(field) {
+          const input = document.getElementById(`${field}-input`);
+          const button = input.nextElementSibling;
+
+          if (input.disabled) {
+              input.disabled = false;
+              input.focus();
+              button.textContent = "저장";
+              button.classList.remove("edit");
+              button.classList.add("save");
+          } else {
+              input.disabled = true;
+              button.textContent = "수정";
+              button.classList.remove("save");
+              button.classList.add("edit");
+              alert(`${field}가 저장되었습니다: ${input.value}`);
+          }
+      }
+
+      function showTab(index) {
+          const tabs = document.querySelectorAll('.tab-content');
+          const tabLinks = document.querySelectorAll('.tabs ul li');
+          tabs.forEach((tab, i) => {
+              tab.classList.toggle('active', i === index);
+              tabLinks[i].classList.toggle('active', i === index);
+          });
+          renderProducts(index);
+      }
+
+      const productData = [
+          Array.from({ length: 30 }, (_, i) => ({
+              name: `판매중 상품 ${i + 1}`,
+              price: `${(i + 1) * 10},000원`,
+              area: `주소 ${i + 1}`,
+              image: "https://via.placeholder.com/150",
+              time: "2분 전"
+          })),
+          Array.from({ length: 10 }, (_, i) => ({
+              name: `판매 완료 상품 ${i + 1}`,
+              price: `${(i + 1) * 15},000원`,
+              area: `주소 ${i + 1}`,
+              image: "https://via.placeholder.com/150",
+              time: "1시간 전"
+          })),
+          Array.from({ length: 8 }, (_, i) => ({
+              name: `구매 상품 ${i + 1}`,
+              price: `${(i + 1) * 20},000원`,
+              area: `주소 ${i + 1}`,
+              image: "https://via.placeholder.com/150",
+              time: "어제"
+          }))
+      ];
+
+      let currentPages = [1, 1, 1];
+      const itemsPerPage = 20;
+
+      function renderProducts(tabIndex) {
+          const productGrid = document.getElementById(`product-grid-${tabIndex}`);
+          const pagination = document.getElementById(`pagination-${tabIndex}`);
+
+          productGrid.innerHTML = "";
+          pagination.innerHTML = "";
+
+          const start = (currentPages[tabIndex] - 1) * itemsPerPage;
+          const end = start + itemsPerPage;
+          const products = productData[tabIndex].slice(start, end);
+
+          products.forEach((product) => {
+              const productElement = document.createElement("div");
+              productElement.className = "product";
+              productElement.innerHTML = `
+                  <img src="${product.image}" alt="${product.name}">
+                  <h3>${product.name}</h3>
+                  <p class="price">${product.price}</p>
+                  <p class="time">${product.area}</p>
+                  <p class="time">${product.time}</p>
+              `;
+              productGrid.appendChild(productElement);
+          });
+
+          const totalPages = Math.ceil(productData[tabIndex].length / itemsPerPage);
+          for (let i = 1; i <= totalPages; i++) {
+              const button = document.createElement("button");
+              button.textContent = i;
+              button.className = i === currentPages[tabIndex] ? "active" : "";
+              button.addEventListener("click", () => {
+                  currentPages[tabIndex] = i;
+                  renderProducts(tabIndex);
+              });
+              pagination.appendChild(button);
+          }
+      }
+
+      renderProducts(0);
+  </script>
+   <footer>
+      <div><strong>도토리 마켓</strong></div>
+      <div><strong>Copyright &copy; DOTOLI</strong></div>
+      <div><strong>주소</strong> 서울 마포구 양화로 122 3층, 4층</div>
+      <div><strong>고객문의</strong> abc@email.com</div>
+    </footer>
+  </body>
+</html>
