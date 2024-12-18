@@ -22,7 +22,7 @@
 		</div>
 
 		<div>
-			<button class="button own" onclick="location.href='<c:url value="/user/index.do" />'">메인</button>
+			<button class="button own" onclick="location.href='<c:url value="/user/main.do" />'">메인</button>
 		</div>
 		<br />
 		<hr />

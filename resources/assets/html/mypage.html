@@ -11,7 +11,7 @@
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
   />
-  
+  <script src="/ehr/resources/assets/js/jquery_3_7_1.js"></script>
     <style>
         body {
             margin: 0;
@@ -397,7 +397,7 @@
 
 <body>
     <div id="header">
-        <img src="../images/logo.svg" class="headerImg" />
+        <img src="/ehr/resources/assets/images/logo.svg" class="headerImg" />
         <!-- 검색창 + 키워드 코드 입력란 -->
         <div class="mainSector">
           <!-- 검색창 시작 -->
@@ -421,8 +421,8 @@
         </div>
         <!-- 검색창 + 키워드 코드 입력란 끝 -->
      
-        <button onclick="location.href='../html/login.html'" id="loginBtn" class="headerBtnMy ">로그인/회원가입</button>
-        <button onclick="location.href='../html/main.html'" class="headerBtnMy " >메인</button>
+        <button class="headerBtn" onclick="location.href='<c:url value="/user/login/login.do" />'">로그인/회원가입</button>
+        <button class="headerBtn" onclick="location.href='<c:url value="/user/main.do" />'">메인</button>
         
         
       </header>
