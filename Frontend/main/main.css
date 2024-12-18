@@ -1,0 +1,266 @@
+html {
+  margin-left: -5px;
+  max-height: 100%;
+  margin-top: -70px;
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.container {
+  width: 150%;
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+  margin-top: -30px;
+  margin-bottom: -50px;
+}
+
+.headerBanner {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  bottom: 50%;
+  transform: translate(-15%);
+}
+
+.logo {
+  margin-top: 60px;
+  margin-left: -20px;
+}
+
+#header h3 {
+  font-size: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.headerImg {
+  height: 250px;
+  width: 250px;
+  margin-bottom: -35px;
+  margin-left: 180px;
+  margin-right: -50px;
+}
+
+.mainSector {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex: 1; /* 남은 공간을 차지해서 가운데 위치 */
+}
+
+.headerImg + .mainSector {
+  margin-left: auto;
+}
+
+form {
+  margin-top: 30px;
+}
+
+.headerBtn {
+  margin-right: 30px;
+  margin-top: 55px;
+  margin-bottom: 10px;
+  margin-left: -20px;
+  height: 40px;
+  width: 80px;
+  border-radius: 20px;
+  border-style: none;
+  background-color: transparent;
+}
+
+.headerBtn:hover {
+  color: #8d6e63;
+}
+
+.headerBtn a {
+  color: black;
+  margin-bottom: 50px;
+}
+
+.mypage {
+  margin-left: -1px;
+  margin-right: 200px;
+}
+
+.dropdown {
+  display: flex; /* Flexbox를 사용해 수평 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
+  border: solid 2px lightgray;
+  border-radius: 10px;
+  width: 800px;
+  height: 60px;
+  padding: 0 10px; /* 내부 여백 추가 */
+  box-sizing: border-box;
+  gap: 10px; /* 요소 간 여백 설정 */
+  margin-top: 55px;
+}
+
+#dropdownBtn {
+  border: none;
+  background-color: white;
+  font-size: 16px;
+  cursor: pointer;
+  padding-bottom: 4px;
+}
+
+.dropdownBtnImg {
+  padding-bottom: 7px;
+}
+
+input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  margin-top: 4px;
+}
+
+.search-img {
+  width: 35px; /* 이미지 크기 */
+  height: 30px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.row-hr {
+  display: inline-block;
+  border-left: thin solid lightgray;
+  height: 30px;
+}
+
+.keyword {
+  font-size: small;
+  display: flex;
+  justify-content: left;
+  gap: 10px;
+  margin-left: 130px;
+  color: #212124;
+  margin-bottom: 30px;
+  font-weight: bolder;
+}
+
+.keyword a {
+  font-size: small;
+  color: #96a6b3;
+}
+
+.keyword a:hover {
+  text-decoration: underline;
+}
+
+.banner img {
+  height: 50%;
+  width: 105%;
+  margin-bottom: 30px;
+}
+
+div h2 {
+  margin-left: 10%;
+}
+
+.kategoryWrap {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  width: 100%;
+  transition: transform 1s;
+  margin-top: 40px;
+}
+
+.kategory {
+  width: 100%;
+  height: 180px;
+  border-radius: 150px;
+  display: flex;
+}
+
+.kategoryH {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 15px 0px;
+  max-width: 100%;
+  margin: 15px auto;
+  gap: 90px;
+}
+
+.kategoryH a {
+  text-align: center; /* 텍스트 가운데 정렬 */
+  display: inline-block; /* 인라인 블록 요소 */
+  width: 100%; /* 각 항목의 너비 고정 */
+  padding: 10px 0; /* 내부 여백 추가 */
+}
+
+.carousel_container {
+  overflow: hidden; /* 캐러셀 외부 영역 숨김 */
+  position: relative; /* 버튼과 페이지네이션의 절대 위치 기준 */
+  width: 100%;
+  max-width: 1200px; /* 최대 너비 지정 */
+  margin: 0 auto; /* 가운데 정렬 */
+}
+
+.carousel_wrapper {
+  display: flex;
+  transition: transform 1s;
+}
+
+.carousel_item {
+  min-width: 100%; /* 부모 너비를 가득 채움 */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 세로 정렬 */
+  justify-content: center; /* 가로 정렬 */
+}
+
+/* 캐러셀 버튼 */
+.carousel_button_container {
+  position: absolute;
+  top: 115%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 -10%;
+}
+
+.carousel_button {
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.carousel_prev,
+.carousel_next {
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+footer {
+  height: 60px;
+  position: relative;
+  margin-top: 15%;
+  transform: translateY(0%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 10%;
+  display: flex;
+  flex-direction: column;
+  color: #96a6b3;
+}
