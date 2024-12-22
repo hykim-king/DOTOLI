@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.hidden {
+	display: none;
+}
+
+body {
+	margin: 0;
+	font-family: 'Noto Sans', sans-serif;
+	background-color: #ffffff;
+	color: #333;
+}
+
+header {
+	background-color: #fff;
+	padding: 10px 20px;
+	border-bottom: 1px solid #ddd;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header .logo {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.container {
+	display: flex;
+	max-width: 1280px;
+	margin: 20px auto;
+	gap: 20px;
+}
+
+.left-panel {
+	width: 30%;
+	background-color: #ffffff;
+	padding: 20px;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+}
+
+.profile-box {
+	text-align: center;
+}
+
+.profile-image {
+	position: relative;
+	margin-bottom: 15px;
+}
+
+.profile-image img {
+	width: 100px;
+	height: 100px;
+	border-radius: 20%;
+	border: 2px solid #ddd;
+}
+
+.profile-image .edit-icon {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background: #A86202;
+	color: #fff;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+.right-panel {
+	width: 70%;
+	min-height: 800px;
+	padding: 20px;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+}
+
+.tabs ul {
+	list-style: none;
+	display: flex;
+	padding: 0;
+	margin: 0;
+	border-bottom: 1px solid #ddd;
+}
+
+.tabs ul li {
+	flex: 1;
+	text-align: center;
+	padding: 10px 0;
+	cursor: pointer;
+}
+
+.tabs ul li.active {
+	font-size: 18px;
+	font-weight: 500;
+	border-bottom: 3px solid #444444;
+	color: #444444;
+}
+
+.tab-content {
+	display: none;
+	margin-top: 20px;
+}
+
+.tab-content.active {
+	display: block;
+}
+
+.product-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 10px;
+}
+
+.product {
+	background: #ffffff;
+	padding: 5px;
+	border-radius: 8px;
+	text-align: left;
+}
+
+.product img {
+	width: 100%;
+	border-radius: 8px;
+}
+
+.product h3 {
+	font-size: 16px;
+	margin: 8px;
+	margin-left: 5px;
+	font-weight: 400;
+}
+
+.product p {
+	font-size: 14px;
+	color: #555;
+	margin-left: 5px;
+}
+
+.product .price {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+	font-size: 20px;
+	color: #212121;
+	margin: 10px 5px;
+}
+
+.pagination {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.pagination button {
+	padding: 8px 12px;
+	margin: 0 5px;
+	border: 1px solid #ddd;
+	background-color: #fff;
+	cursor: pointer;
+	border-radius: 4px;
+	font-size: 14px;
+}
+
+.pagination button.active {
+	background-color: #A86202;
+	color: #fff;
+	border-color: #A86202;
+}
+
+.pagination button:hover {
+	background-color: #814c01;
+	color: #fff;
+}
+
+.left-panel button {
+	width: 100%;
+	padding: 14px 15px;
+	border: 1px solid #f0f0f0;
+	border-radius: 10px;
+	background: #A86202;
+	color: #fff;
+	font-size: 16px;
+	margin-bottom: 15px;
+	margin-top: 6px;
+	box-shadow: 0 2px 0 #eee;
+}
+
+#otherCancelBtn {
+	width: 100%;
+	padding: 15px 20px;
+	background-color: #fff;
+	color: #333;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	font-size: 16px;
+	cursor: pointer;
+	margin-top: -5px;
+	box-shadow: 0 2px 0 #eee;
+}
+
+#otherCancelBtn:hover {
+	background-color: #f0f0f0;
+	color: #A86202;
+}
+
+button:hover, input[type="button"]:hover {
+	background: #814c01;
+	color: #fff;
+}
+
+input[type="text"] {
+	border: 1px solid #ddd;
+	background: #f9fafc;
+	padding: 16px;
+	border-radius: 5px;
+	font-size: 14px;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+input[type="text2"] {
+	padding: 12px 15px;
+	border: 1px solid #ccc;
+	font-size: 16px;
+	margin-bottom: 15px;
+	margin-top: 6px;
+}
+
+.profile-image {
+	position: relative;
+	display: inline-block;
+	margin-bottom: 15px;
+}
+
+.profile-image img {
+	width: 100px;
+	height: 100px;
+	border-radius: 20%;
+	border: 2px solid #ddd;
+}
+
+.profile-image .edit-icon {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background: #A86202;
+	color: #fff;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	font-size: 14px;
+	border: none;
+	margin-bottom: 5px;
+	;
+}
+
+.profile-image .edit-icon:hover {
+	background: #814c01;
+}
+
+/* 폼 컨트롤 스타일 */
+.form {
+	font-size: 14px;
+	font-weight: 500;
+	margin-bottom: 10px;
+	margin-left: 5px;
+	color: #333;
+	text-align: left;
+}
+
+.form label {
+	font-size: 14px;
+	font-weight: 500;
+	margin-bottom: 10px;
+	display: block;
+	margin-left: 5px;
+	color: #333;
+}
+
+.input-group {
+	display: flex;
+	gap: 10px;
+	align-items: baseline;
+}
+
+#sendAuthBtn, #addressBtn {
+	padding: 12px 20px;
+	background-color: #ffffff;
+	border: 1px solid #ccc;
+	color: #333;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+	box-shadow: 0 2px 0 #eee;
+}
+
+#sendAuthBtn:hover {
+	background-color: #f0f0f0;
+}
+
+#addressBtn:hover {
+	background-color: #f0f0f0;
+}
+
+.input-group {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
+#auth-code {
+	padding: 15px 25px;
+	border: 1px solid #ccc;
+	font-size: 16px;
+	border-radius: 5px;
+}

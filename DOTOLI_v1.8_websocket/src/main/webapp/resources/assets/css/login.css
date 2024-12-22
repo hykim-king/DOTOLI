@@ -1,0 +1,174 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+/* login.css */
+body {
+    font-family: 'noto sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  #login-wrap {
+    position: relative;
+    background-color: #ffffff;
+    width: 400px;
+    padding: 30px;
+    box-shadow: 0 2px 0 #eee;
+    border-radius: 15px;
+    border: 1px solid #e7e7e7;
+    text-align: center;
+  }
+
+  h1 a img {
+    width: 240px;
+  }
+
+  #registerForm{
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+    padding-bottom: 20px;
+  }
+  
+  .logo{
+    margin: 0;
+    padding: 0;
+  }
+  
+  .form {
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  input[type="email"],
+  input[type="text"] {
+    width: 100%;
+    padding: 15px 20px;;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  
+  input[type="email"]:focus,
+  input[type="text"]:focus {
+    border-color: #A86202;
+    outline: none;
+  }
+
+  .auth-input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .auth-input-wrap input[type="text"] {
+    flex: 1;
+    padding-right: 60px; /* 버튼 공간 확보 */
+    box-sizing: border-box;
+  }
+  
+  .auth-input-wrap .text-button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 15px;
+    padding: 10px 20px;
+    color: #333;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .auth-input-wrap .text-button:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .btm {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 15px 0;
+    justify-content: space-between;
+    }
+
+    .btm .idpw_search {
+        color: #4aa4ff;
+    }
+  
+  button {
+    width: 100%;
+    padding: 15px 20px;;
+    background-color: #A86202; /* 도토리마켓 색상 */
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 2px 0 #744402;
+  }
+  
+  button:hover {
+    background-color: #8c5c2e;
+  }
+
+  #register_btn{
+    width: 100%;
+    padding: 15px 20px;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 2px 0 #eee;
+  }
+  
+  #register_btn:hover{
+    background-color: #fafafa;
+  }
+  
+  #sendAuthBtn {
+    width: auto;
+    padding: 12px 15px;
+    color: #858585;
+    justify-content: center;
+  }
+  
+  #sendAuthBtn:hover {
+    color: #4aa4ff;
+  }
+  
+  footer {
+    font-size: 12px;
+    color: #777;
+    text-align: center;
+  }
+  
+  footer a {
+    color: #6a3a09;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+  hr {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+  }
+  
+  .button.own {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  

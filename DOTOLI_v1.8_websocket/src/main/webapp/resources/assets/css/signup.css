@@ -1,0 +1,137 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+/* 기본 스타일 설정 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "noto sans KR", sans-serif;
+}
+
+body {
+  background: #ffffff;
+  padding: 40px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+form {
+  width: 500px;
+  border: 1px solid #e7e7e7;
+  padding: 35px 50px;
+  width: 500px;
+  border-radius: 15px;
+  box-shadow: 0 2px 0 #eee;
+  margin: 0 auto;
+}
+
+/* 폼 컨트롤 스타일 */
+label[for="auth-code"] {
+  margin-bottom: 15px;
+}
+
+.form,
+.form2 {
+  margin-bottom: 20px;
+}
+
+input[type="signinput"] {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  margin-top: 6px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  margin-bottom: 15px;
+  margin-top: 6px;
+}
+
+button,
+input[type="button"] {
+  width: 100%;
+  padding: 14px;
+  background: #dcdcdc;
+  color: white;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 0 #eee;
+}
+
+button:hover,
+input[type="button"]:hover,
+#register:hover {
+  background: #814c01;
+}
+
+.button_own {
+  margin-bottom: 15px;
+}
+
+#register {
+  width: 100%;
+  padding: 14px;
+  background: #a86202;
+  color: white;
+  border: 1px solid #a86202;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 0 #eee;
+}
+
+#return_main {
+  width: 100%;
+  padding: 14px;
+  background: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 0 #eee;
+}
+
+#return_main:hover {
+  color: #a86202;
+}
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+footer a {
+  color: #0078ff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+#map {
+  margin-top: 10px;
+  border: 1px solid #ddd;
+}
+
+#emailMessage,
+#authMessage,
+#phoneMessage,
+#registerMessage {
+  color: red;
+  font-size: 12px;
+}
