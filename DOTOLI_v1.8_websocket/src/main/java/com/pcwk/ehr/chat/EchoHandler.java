@@ -39,16 +39,20 @@ public class EchoHandler extends TextWebSocketHandler {
         } else {
             // Handle regular messages (chat)
             String[] parts = payload.split(":", 2);
-            String receiverId = parts[0]; // Extract receiver ID
-            String msg = parts[1];  // Extract the message content
+            if (parts.length == 2) {
+                String receiverId = parts[0]; // Extract receiver ID
+                String msg = parts[1];  // Extract the message content
 
-            // Send the message to the intended receiver
-            WebSocketSession receiverSession = userSessions.get(receiverId);
-            if (receiverSession != null && receiverSession.isOpen()) {
-                receiverSession.sendMessage(new TextMessage(msg));
-                System.out.println("Message from " + session.getId() + " to " + receiverId + ": " + msg);
+                // Send the message to the intended receiver
+                WebSocketSession receiverSession = userSessions.get(receiverId);
+                if (receiverSession != null && receiverSession.isOpen()) {
+                    receiverSession.sendMessage(new TextMessage(receiverId + ":" + msg));
+                    System.out.println("Message from " + session.getId() + " to " + receiverId + ": " + msg);
+                } else {
+                    System.out.println("Receiver not found or not connected.");
+                }
             } else {
-                System.out.println("Receiver not found or not connected.");
+                System.out.println("Invalid message format: " + payload);
             }
         }
     }

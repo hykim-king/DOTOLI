@@ -7,56 +7,67 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="resources/sockjs.min.js"></script>
     <style>
-        /* 채팅 영역의 스타일 */
-        #chat {
-            width: 100%;
-            height: 400px;         /* 고정 높이 설정 */
+        .chat-room {
             border: 1px solid #ccc;
-            overflow-y: scroll;    /* 내용이 넘치면 스크롤이 생기도록 설정 */
+            margin-bottom: 20px;
             padding: 10px;
             background-color: #f9f9f9;
-            margin-bottom: 20px;
+            width: 300px;
+            display: inline-block;
+            vertical-align: top;
         }
 
-        /* 채팅 입력 필드 스타일 */
-        #message {
+        .messages {
+            width: 100%;
+            height: 200px;
+            border: 1px solid #ccc;
+            overflow-y: scroll;
+            padding: 10px;
+            background-color: #fff;
+        }
+
+        .message {
             width: 80%;
             padding: 5px;
         }
 
-        /* 채팅 전송 버튼 스타일 */
-        #sendMessageButton {
+        .send-message {
             padding: 5px 10px;
             cursor: pointer;
+        }
+
+        #receiverId {
+            width: 80%;
+            padding: 5px;
+        }
+
+        #startChatButton {
+            padding: 5px 10px;
         }
     </style>
 </head>
 <body>
-   <label for="receiverId">상대방 ID:</label>
-<input type="text" id="receiverId" placeholder="채팅할 상대방 ID 입력" />
+   <h3>1:1 Chat</h3>
 
-<div id="chatArea" class="chat-area">
-    <h3>채팅</h3>
-    <div id="chat"></div>
-    <input type="text" id="message" placeholder="메시지를 입력하세요" />
-    <button id="sendMessageButton">send</button>
-</div>
-    
-    
+   <label for="receiverId">Receiver ID:</label>
+   <input type="text" id="receiverId" placeholder="Enter the receiver's ID" />
+   <button id="startChatButton">Start Chat</button>
+
+   <div id="chatRooms"></div>
 
 <script>
     var sock = new SockJS("/echo");
+    var userId = null;
 
     // WebSocket connection open handler
     sock.onopen = function() {
-        console.log("WebSocket 연결 성공");
-
-        // Prompt the user for their ID
-        var userId = prompt("사용자 ID를 입력하세요:");
+        console.log("WebSocket connected.");
+        
+        // Ask for the user's ID
+        userId = prompt("Please enter your user ID:");
         
         if (userId) {
-            // Send user ID to the server after connection
-            sock.send("setUserId:" + userId);
+            sock.send("setUserId:" + userId);  // Send user ID to the server
         } else {
             alert("User ID is required.");
         }
@@ -65,56 +76,88 @@
     // Handle incoming messages
     sock.onmessage = function(e) {
         var message = e.data;
+        console.log("Received message: " + message);
+        
+        // Check if the message is a user ID confirmation
+        if (message.startsWith("User ID set to:")) {
+            // Handle the user ID confirmation (no action needed for now)
+            console.log("User ID set successfully: " + message);
+            return;
+        }
 
-        // If the message is asking for a user ID, we can display it
-        if (message.startsWith("Please provide your user ID")) {
-            console.log(message);
-        } else if (message.startsWith("User ID set to:")) {
-            console.log(message); // Confirmation that the user ID has been set
+        // Check if the message is a chat message in the format "receiverId:message"
+        var parts = message.split(":", 2);
+        if (parts.length === 2) {
+            var receiverId = parts[0];  // Extract receiverId
+            var msg = parts[1];  // Extract message
+
+            console.log("Receiver ID: " + receiverId);
+            console.log("Message: " + msg);
+
+            // Ensure that we find or create the correct chat room for the receiverId
+            var chatRoom = $(".chat-room[data-userid='" + receiverId + "']");
+            if (chatRoom.length > 0) {
+                // Append the message to the chat room's message box
+                chatRoom.find(".messages").append(receiverId + ": " + msg + "<br/>");
+                scrollToBottom(chatRoom);
+            } else {
+                // If the chat room for the receiver doesn't exist, create it
+                console.log("No chat room found for receiver: " + receiverId);
+                createChatRoom(receiverId, msg);  // Create the chat room for the receiver
+            }
         } else {
-            // Display incoming chat messages
-            console.log("Received: " + message);
-            $("#chat").append("상대방: " + message + "<br/>");
-            scrollToBottom();
+            console.log("Invalid message format: " + message);
         }
     };
 
-    // Send message to the server
-    $("#sendMessageButton").click(function() {
-        sendMessage();
-    });
-
-    // Send message when Enter key is pressed
-    $("#message").keypress(function(event) {
-        if (event.keyCode == 13) {  // Enter key code is 13
-            event.preventDefault();  // Prevent the default action (new line)
-            sendMessage();
-        }
-    });
-
-    // Send message function
-    function sendMessage() {
-        var messageContent = $("#message").val();
-        var receiverId = $("#receiverId").val(); // The recipient's ID
-        if (messageContent && receiverId) {
-            // Append message to the chat
-            $("#chat").append("나: " + messageContent + "<br/>");
-
-            // Send message to the server in the format "receiverId: message"
-            sock.send(receiverId + ":" + messageContent);
-            $("#message").val(''); // Clear the message input field
-
-            // Scroll chat window to the bottom
-            scrollToBottom();
+    // Handle creating a new chat room
+    $("#startChatButton").click(function() {
+        var receiverId = $("#receiverId").val().trim();
+        if (receiverId && receiverId !== userId) {
+            // Check if the chat room already exists
+            var existingChatRoom = $(".chat-room[data-userid='" + receiverId + "']");
+            if (existingChatRoom.length == 0) {
+                createChatRoom(receiverId);  // Create the chat room for the receiver
+            } else {
+                alert("Already chatting with " + receiverId);
+            }
         } else {
-            alert("수신자와 메시지를 입력해주세요.");
+            alert("Please enter a valid receiver ID.");
         }
+    });
+
+    // Function to create a new chat room
+    function createChatRoom(receiverId, initialMessage) {
+        var chatRoom = $("<div class='chat-room'></div>");
+        chatRoom.attr('data-userid', receiverId);
+        chatRoom.append("<h3>Chat with " + receiverId + "</h3>");
+        chatRoom.append("<div class='messages'></div>");
+        chatRoom.append("<input type='text' class='message' placeholder='Type your message' />");
+        chatRoom.append("<button class='send-message'>Send</button>");
+
+        $("#chatRooms").append(chatRoom);
+
+        // If there is an initial message, append it to the chat
+        if (initialMessage) {
+            chatRoom.find(".messages").append("Me: " + initialMessage + "<br/>");
+        }
+
+        // Send message when the button is clicked
+        chatRoom.find(".send-message").click(function() {
+            var message = chatRoom.find(".message").val().trim();
+            if (message) {
+                sock.send(receiverId + ":" + message);  // Send message via WebSocket
+                chatRoom.find(".messages").append("Me: " + message + "<br/>"); // Display the message locally
+                chatRoom.find(".message").val('');  // Clear the message input
+                scrollToBottom(chatRoom);  // Scroll to the bottom
+            }
+        });
     }
 
-    // Scroll chat to the bottom
-    function scrollToBottom() {
-        var chatDiv = document.getElementById("chat");
-        chatDiv.scrollTop = chatDiv.scrollHeight;
+    // Function to scroll to the bottom of the chat
+    function scrollToBottom(chatRoom) {
+        var messagesDiv = chatRoom.find(".messages")[0];
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
     }
 </script>
 
